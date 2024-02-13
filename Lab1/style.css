@@ -1,0 +1,54 @@
+header img{
+    width: 25%;
+}
+
+header p{
+    font-size: 25px;
+}
+
+#info{
+    font-size: 15px;
+}
+
+main img{
+    width: 25%;
+}
+
+p{
+    font-size: 18px;
+}
+
+#github{
+    width: 75px;
+}
+
+#linkedin{
+    width: 130px;
+}
+
+.preguntas li{
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.preguntas p{
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bibliografia li{
+    font-style: italic;
+    margin: 5px 0;
+}
+
+footer{
+    margin: 50px 0;
+    text-align: center;
+}
+
+footer p{
+    font-size: 12px;
+}
+
