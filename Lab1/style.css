@@ -18,12 +18,33 @@ p{
     font-size: 18px;
 }
 
+.portafolio{
+    margin: 0 auto;
+    text-align: center;
+    width: 300px;
+    border-radius: 8px;
+    background-color: #778da9;
+}
+
 #github{
     width: 75px;
 }
 
 #linkedin{
     width: 130px;
+}
+
+.preguntas{
+    border-radius: 8px;
+    background-color: #e0e1dd;
+}
+
+.preguntas h1{
+    padding: 10px 0 0 5px;
+}
+
+.preguntas h3{
+    padding: 0 0 0 5px;
 }
 
 .preguntas li{
@@ -37,6 +58,12 @@ p{
     font-weight: normal;
     font-style: normal;
 }
+
+.bibliografia{
+    border-radius: 8px;
+    background-color: #e0e1dd;
+}
+
 
 .bibliografia li{
     font-style: italic;
