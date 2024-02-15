@@ -7,13 +7,12 @@
         <link rel="stylesheet" href="style.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">   
-        <script src="code.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">  
     </head>
 
     <body>
         <header>
-            <h1>Sobre mí</h1>
+            <h1 class="titulo">Sobre mí</h1>
             <p>Daniel Queijeiro Albo</p>
             <p id="info">A01710441 - dany.queijeiro@hotmail.com</p> 
             <img src="img/kat.jpeg" alt="Mi gata Kat" class="foto" id="fotoKat">
@@ -21,13 +20,13 @@
         </header>
 
         <main>
-            <h1>¿Quién soy?</h1>
+            <h1 class="titulo">¿Quién soy?</h1>
             <p>Soy Daniel Queijeiro Albo, tengo 19 años y me encuentro cursando mi cuarto semestre de Ingeniería en Tecnologías Computacionales en el Tec de Monterrey.</p>
             <p><label>Mi fecha de nacimiento: <input type="datetime" placeholder="27 de Mayo del 2004" disabled></label></p>
 
             <p>Mis hobbies son los videojuegos, el anime y manga. Y dentro del área de la tecnología me llama la atención la ciberseguridad y la inteligencia artificial.</p>
 
-            <h1>Acerca de mi desarrollo profesional</h1>
+            <h1 class="titulo">Acerca de mi desarrollo profesional</h1>
 
             <p>El año pasado participé en el Hackatón "DefinSpace" donde en conjunto a mí equipo creamos las bases para un satélite. Terminamos en segundo lugar del Hackatón y actualmente estamos enfocados en desarrollar la idea del satélite.</p>
             <img src="img/certificado.jpeg" alt="Certificado de segundo lugar" class="foto">
@@ -38,7 +37,7 @@
                 <a href="https://www.linkedin.com/in/daniel-queijeiro-albo-0377a2292/"><img src="img/linkedin.png" alt="Logo de Linkedin" id="linkedin"></a>
             </div>
 
-            <div class="preguntas">
+            <div class="container">
                 <h1>Preguntas a responder</h1>
                 <h3> Laboratorio 1</h3>
                 <ol>
@@ -145,6 +144,9 @@
                         <p>Por otro lado, el ciclo de desarrollo del software, también conocido como ciclo de vida del desarrollo de software (SDLC), se centra más en el proceso de desarrollo del software. Este ciclo incluye fases como la planificación, el análisis de requisitos, el diseño, la codificación, las pruebas, la implementación y el mantenimiento.</p>
                     </li>
                 </ol>
+            </div>
+
+            <div class="container">
                 <h3>Laboratorio 3</h3>
                 <ol>
                     <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? 
@@ -188,16 +190,21 @@
                     <li>Corvo, H. S. (2020, 15 septiembre). Ciclo de vida de un sistema de información (Fases). Lifeder. https://www.lifeder.com/ciclo-vida-sistema-informacion/</li>
                     <li>¿Qué es el SDLC? - Explicación del ciclo de vida del desarrollo de software - AWS. (s.f.). Amazon Web Services, Inc. https://aws.amazon.com/es/what-is/sdlc/</li>
                     <li>miguel@immune.institute. (2023, 7 marzo). Proceso de desarrollo de software y ciclo de vida. Immune Technology Institute. https://immune.institute/blog/proceso-desarrollo-software-ciclo-vida/</li>
-                    
+                </div>    
+                
+                <div class="bibliografia">
                     <p>Laboratorio 3</p>
-                    <li>!important - CSS: Cascading Style Sheets | MDN. (2023, 20 diciembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/important</li>
-                    <li>CSS values and units - Learn web development | MDN. (2024, 6 febrero). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units</li>
-                    <li>Cloudfare. (s.f.). Cómo minificar el CSS para mejorar el rendimiento del sitio web. Recuperado 13 de febrero de 2024, de https://www.cloudflare.com/es-es/learning/performance/how-to-minify-css/#:~:text=La%20minificación%20de%20CSS%20reduce,cómo%20lo%20interpretan%20los%20navegadores.</li>
-                </ul>
-            </div>
+                    <ul>
+                        <li>!important - CSS: Cascading Style Sheets | MDN. (2023, 20 diciembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/important</li>
+                        <li>CSS values and units - Learn web development | MDN. (2024, 6 febrero). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units</li>
+                        <li>Cloudfare. (s.f.). Cómo minificar el CSS para mejorar el rendimiento del sitio web. Recuperado 13 de febrero de 2024, de https://www.cloudflare.com/es-es/learning/performance/how-to-minify-css</li>
+                    </ul>
+                </div>
         </main>
 
         <footer>
             <p>Visual Studio Code - https://code.visualstudio.com</p>
         </footer>
+        <script src="code.js"></script>
     </body>
+</html>

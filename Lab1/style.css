@@ -5,14 +5,19 @@ body{
     padding: 4em 1em;
     font-family: "Roboto", sans-serif;
     font-style: normal;
-    color: #555;
+    background-color: #d6eadf;
+}
+
+.titulo{
+    margin: 50px 0 0 0;
+    text-align: center;
 }
 
 .foto{
     margin: 0 auto;
     max-width: 25%;
 }
-.preguntas li,p{
+.container li,p{
     font-size:18px
 }
 header p{
@@ -23,11 +28,11 @@ header p{
     font-size:15px
 }
 .portafolio{
-    margin:0 auto;
+    margin:30px auto;
     text-align:center;
     width:300px;
     border-radius:8px;
-    background-color:#778da9
+    background-color:#95b8d1;
 }
 #github{
     margin:0 0 0 18px;
@@ -36,33 +41,43 @@ header p{
 #linkedin{
     width:130px
 }
-.bibliografia,.preguntas{
+.container{
+    margin: 20px 0;
     border-radius:8px;
-    background-color:#e0e1dd
+    background-color:#95b8d1;
+    padding: 0 10px;
 }
-.preguntas h1{
+.container h1{
     padding:10px 0 0 5px
 }
-.preguntas h3{
-    padding:0 0 0 5px
+.container h3{
+    padding:0 0 0 5px;
 }
-.preguntas li{
+.container li{
     font-weight:700;
-    font-style:italic
+    font-style:italic;
 }
-.preguntas p{
+.container p{
     font-size:15px;
     font-weight:400;
-    font-style:normal
+    font-style:normal;
 }
+
+.bibliografia{
+    margin: 20px 0;
+    border-radius:8px;
+    background-color:#95b8d1;
+    padding: 10px 10px;
+}
+
 .bibliografia li{
     font-style:italic;
-    margin:5px 0
+    margin:5px 0;
 }
 footer{
     margin:50px 0;
-    text-align:center
+    text-align:center;
 }
 footer p{
-    font-size:12px
+    font-size:12px;
 }
