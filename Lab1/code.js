@@ -25,13 +25,17 @@ function tabla(){
 }
 
 function random(){
-    let numeroUno = parseInt(Math.floor(Math.random() * 10));
-    let numeroDos = parseInt(Math.floor(Math.random() * 10));
+    let timeInicio = Date.now()
+    let numeroUno = Math.floor(Math.random() * 10) +1;
+    let numeroDos = Math.floor(Math.random() * 10) +1;
     let respuesta = parseInt(prompt(`Pregunta 2: Cuál es el resultado de: ${numeroUno} + ${numeroDos}`));
+    let timeFin = Date.now()
+    let timeTotal = timeFin - timeInicio;
     document.write("<h1>Problema 2</h1>");
     if(respuesta == numeroUno + numeroDos){
        document.write(`<p>Respuesta correcta: ${respuesta}</p>`) 
     } else{document.write(`<p>Respuesta incorrecta, era: ${respuesta}</p>`)}
+    document.write(`<p>El tiempo tardado en constestar fue de: ${timeTotal * 0.001} segundos.</p>`)
 
 }
 
@@ -79,7 +83,18 @@ function inverso(num){
 
 }
 
-function cambiarImg(){
+const fotoKatUno = () => {
+    var img = document.getElementById("fotoKat");
+    img.src="img/kat.png";
+}
+
+const fotoKatDos = () => {
     var img = document.getElementById("fotoKat");
     img.src="img/kat2.png";
+}
+
+function cambiarImg(){
+    var img = document.getElementById("fotoKat");
+    if(img.src="img/kat.png"){ fotoKatDos()}
+    if(img.src="img/kat2.png"){fotoKatUno()}
 }
