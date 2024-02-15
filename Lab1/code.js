@@ -1,5 +1,11 @@
+function labCuatro(){
+    tabla()
+    random()
+    contador(arreglo)
+}
+
 function tabla(){
-    let numero = parseInt(prompt("Por favor, ingresa un número:"));
+    let numero = parseInt(prompt("Pregunta 1: Ingresa un número:"));
 
     if (!isNaN(numero)) {
     document.write("<h1>Problema 1</h1>")
@@ -19,7 +25,7 @@ function tabla(){
 function random(){
     let numeroUno = parseInt(Math.floor(Math.random() * 10));
     let numeroDos = parseInt(Math.floor(Math.random() * 10));
-    let respuesta = parseInt(prompt(`Cuál es el resultado de: ${numeroUno} + ${numeroDos}`));
+    let respuesta = parseInt(prompt(`Pregunta 2: Cuál es el resultado de: ${numeroUno} + ${numeroDos}`));
     document.write("<h1>Problema 2</h1>");
     if(respuesta == numeroUno + numeroDos){
        document.write("<p>Respuesta correcta</p>") 
@@ -47,6 +53,11 @@ function contador(arreglo){
     document.write(`<p>El arreglo es: [${arreglo}]</p><p>El total números negativos son: ${totalNegativo}</p> <p>El total de ceros en el arreglo es: ${totalCero}</p><p> El total de números positivos: ${totalPositivo}</p>`);
 }
 
+const matriz = [[1,2,3],[4,5,6],[7,8,9]];
+function promedios(matriz){
+    let respuesta = [];
+    respuesta.push();
+}
 
 function cambiarImg(){
     var img = document.getElementById("fotoKat");
