@@ -2,13 +2,15 @@ function labCuatro(){
     tabla()
     random()
     contador(arreglo)
+    promedios(matriz)
+    inverso(num)
 }
 
 function tabla(){
     let numero = parseInt(prompt("Pregunta 1: Ingresa un número:"));
+    document.write("<h1>Problema 1</h1>")
 
     if (!isNaN(numero)) {
-    document.write("<h1>Problema 1</h1>")
     document.write("<table>");
     document.write("<tr><th>Número</th><th>Cuadrado</th><th>Cubo</th></tr>");
     for (let i = 1; i <= numero; i++) {
@@ -28,8 +30,8 @@ function random(){
     let respuesta = parseInt(prompt(`Pregunta 2: Cuál es el resultado de: ${numeroUno} + ${numeroDos}`));
     document.write("<h1>Problema 2</h1>");
     if(respuesta == numeroUno + numeroDos){
-       document.write("<p>Respuesta correcta</p>") 
-    } else{document.write("<p>Respuesta incorrecta</p>")}
+       document.write(`<p>Respuesta correcta: ${respuesta}</p>`) 
+    } else{document.write(`<p>Respuesta incorrecta, era: ${respuesta}</p>`)}
 
 }
 
@@ -56,7 +58,25 @@ function contador(arreglo){
 const matriz = [[1,2,3],[4,5,6],[7,8,9]];
 function promedios(matriz){
     let respuesta = [];
-    respuesta.push();
+    for(const fila of matriz){
+        const suma = fila.reduce((acumulador, numero) => acumulador + numero, 0);
+        const promedio = suma/fila.length;
+
+        respuesta.push(promedio);
+    }
+    document.write("<h1>Pregunta 4</h1>");
+    document.write(`<p>Los promedios de la matriz son: [${respuesta}]</p>`);
+}
+
+let num = 12345;
+ 
+function inverso(num){
+    let auxInverso = num => Number(num);
+    let arreglo = Array.from(String(num), auxInverso);
+    arreglo = arreglo.reverse();
+    document.write("<h1>Pregunta 5</h1>");
+    document.write(`<p> El inverso del arreglo es: [${arreglo}]</p>`);
+
 }
 
 function cambiarImg(){
