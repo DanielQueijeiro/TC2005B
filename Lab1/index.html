@@ -3,7 +3,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Laboratorio 1</title>
+        <title>Laboratorio 1 - 4</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@
 
             <div class="container">
                 <h1>Preguntas a responder</h1>
-                <h3> Laboratorio 1</h3>
+                <h1> Laboratorio 1</h1>
                 <ol>
                     <li>¿Cuál es la diferencia entre Internet y la World Wide Web?
                         <p>Internet es un sistema de computadoras que conforma una gran red de comunicación mundial, mientras que la World Wide Web es un sistema que funciona a través de Internet y permite transmitir diversos tipos de datos a través del Protocolo de Transferencia de Hipertextos (HTTP)</p>
@@ -158,7 +158,7 @@
             </div>
 
             <div class="container">
-                <h3>Laboratorio 3</h3>
+                <h1>Laboratorio 3</h1>
                 <ol>
                     <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? 
                         <p>El uso de !important puede ser útil pero tiene que ser usada con mucho cuidado porque puede llegar a causar conflictos al momento de seguir desarrollando la página o al trabajar con otras personas para que entiendan el CSS</p>
@@ -180,10 +180,65 @@
                 </ol>
             </div>
 
+            <div class="container">
+                <h1>Laboratorio 4</h1>
+                <ol>
+                    <li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+                        <table class="tabla">
+                            <tr>
+                                <th>Java</th>
+                                <th>JavaScript</th>
+                            </tr>
+                            <tr>
+                                <td>Java es un lenguaje compilado</td>
+                                <td>JavaScript es un lenguaje interpretado</td>
+                            </tr>
+                            <tr>
+                                <td>Java es un lenguaje de programación orientado a objetos</td>
+                                <td>JavaScript está basado en prototipos y puede emular la programación orientada a objetos</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript se ejecuta en el navegador del usuario final</td>
+                                <td>Java requiere un entorno de ejecución llamado Java Virtual Machine (JVM) para ejecutar el código.</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript es débilmente tipado</td>
+                                <td>Java es fuertemente tipado</td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li>¿Qué métodos tiene el objeto Date?
+                        <p>El método getDate() devuelve el día del mes para la fecha especificada de acuerdo con la hora local.</p>
+                        <p>El método getFullYear() devuelve el año de la fecha indicada acorde a la hora local.</p>
+                        <p>El método getMinutes() devuelve los minutos de la fecha especificada en función de la hora local.</p>
+                        <p>El método getTime() devuelve el valor numérico correspondiente a la hora para la fecha especificada según la hora universal.</p>
+                        <p>El método now devuelve los milisegundos transcurridos desde las 00:00:00 UTC del 1 de enero de 1970 justo hasta ahora como un Number.</p>
+                    </li>
+
+                    <li>¿Qué métodos tienen los arreglos?
+                        <p>El método concat() se usa para unir dos o más arrays. Este método no cambia los arrays existentes, sino que devuelve un nuevo array.</p>
+                        <p>El método find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.</p>
+                        <p>El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.</p>
+                        <p>El método Array.of() crea una nueva instancia Array con un número variable de elementos pasados como argumento, independientemente del número o del tipo.</p>
+                        <p>El método reduce() ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.</p>
+                    </li>
+
+                    <li>¿Cómo se declara una variable con alcance local dentro de una función?
+                        <p>Con la declaración "let" la variable será local con ámbito de bloque, opcionalmente la inicia a un valor.</p>
+                    </li>
+
+                    <li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+                        <p>Problemas de mantenibilidad y colisiones de nombres: El uso excesivo de variables y funciones globales puede llevar a problemas de mantenibilidad y colisiones de nombres. Esto puede hacer que el código sea más difícil de entender y mantener.</p>
+                        <p>Modificación de variables globales: Una variable global puede ser utilizada e incluso modificada dentro de una función. Esto puede llevar a comportamientos inesperados si no se maneja correctamente.</p>
+                    </li>
+                </ol>
+            </div>
+
             <div class="bibliografia">
                 <h1>Bibliografía</h1>
+                <h1> Laboratorio 1</h1>
                 <ul>
-                    <p> Laboratorio 1</p>
                     <li>BBC News Mundo. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</li>
                     <li>¿Qué es una URL? Todo lo que necesita saber. (2024, 16 enero). SoftwareLab. https://softwarelab.org/es/blog/que-es-una-url/</li>
                     <li>Diferenciador. (2020, 27 febrero). Diferencia entre internet y web. Diferenciador. https://www.diferenciador.com/diferencia-entre-internet-y-web/</li>
@@ -201,14 +256,25 @@
                     <li>Corvo, H. S. (2020, 15 septiembre). Ciclo de vida de un sistema de información (Fases). Lifeder. https://www.lifeder.com/ciclo-vida-sistema-informacion/</li>
                     <li>¿Qué es el SDLC? - Explicación del ciclo de vida del desarrollo de software - AWS. (s.f.). Amazon Web Services, Inc. https://aws.amazon.com/es/what-is/sdlc/</li>
                     <li>miguel@immune.institute. (2023, 7 marzo). Proceso de desarrollo de software y ciclo de vida. Immune Technology Institute. https://immune.institute/blog/proceso-desarrollo-software-ciclo-vida/</li>
-                </div>    
+                </div>   
                 
                 <div class="bibliografia">
-                    <p>Laboratorio 3</p>
+                    <h1>Laboratorio 3</h1>
                     <ul>
                         <li>!important - CSS: Cascading Style Sheets | MDN. (2023, 20 diciembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/important</li>
                         <li>CSS values and units - Learn web development | MDN. (2024, 6 febrero). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units</li>
                         <li>Cloudfare. (s.f.). Cómo minificar el CSS para mejorar el rendimiento del sitio web. Recuperado 13 de febrero de 2024, de https://www.cloudflare.com/es-es/learning/performance/how-to-minify-css</li>
+                    </ul>
+                </div>
+
+                <div class="bibliografia">
+                    <h1>Laboratorio 4</h1>
+                    <ul>
+                        <li>Soria, M. C. (2023, 23 mayo). ¿Qué diferencias hay entre JavaScript y Java? Hack A Boss. Recuperado 16 de febrero de 2024, de https://www.hackaboss.com/blog/diferencias-javascript-java.</li>
+                        <li>Date - JavaScript | MDN. (2023, 25 septiembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</li>
+                        <li>Array - JavaScript | MDN. (s. f.). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array</li>
+                        <li>Gramática y tipos - JavaScript | MDN. (2023, 24 julio). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types</li>
+                        <li>KeepCoding, R. (2023, 18 septiembre). ¿Qué son los objetos globales en JavaScript y cómo usarlos? KeepCoding Bootcamps. https://keepcoding.io/blog/objetos-globales-en-javascript-y-como-usarlos/</li>
                     </ul>
                 </div>
         </main>
