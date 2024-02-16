@@ -2,10 +2,42 @@ body{
     margin: 0 auto; 
     max-width: 50em; 
     line-height: 1.5;
-    padding: 4em 1em;
+    padding: 0 1em;
     font-family: "Roboto", sans-serif;
     font-style: normal;
     background-color: #d6eadf;
+}
+
+.tituloContainer{
+    margin: 20px 0; 
+    border-radius:8px;
+    background-color:#95b8d1;
+    text-align: center;
+}
+
+#info{
+    display: inline;
+}
+
+header button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width: 25%;
+    background-color: #95b8d1;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
+}
+
+header button:hover{
+    background-color: #709cbb;
+    transform: scale(1.01);
 }
 
 .titulo{
@@ -14,7 +46,9 @@ body{
 }
 
 .foto{
-    margin: 0 auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 25%;
 }
 .container li,p{
@@ -30,7 +64,7 @@ header p{
 .portafolio{
     margin:30px auto;
     text-align:center;
-    width:300px;
+    width:50%;
     border-radius:8px;
     background-color:#95b8d1;
 }
@@ -43,7 +77,6 @@ header p{
 }
 .container{
     margin: 20px 0; 
-    padding:10px 0;
     border-radius:8px;
     background-color:#95b8d1;
 }
@@ -61,6 +94,43 @@ header p{
     font-size:15px;
     font-weight:400;
     font-style:normal;
+}
+
+.fotoCertificado{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.containerJavaScript{
+    position: relative;
+    margin: 0 auto ;
+    padding: 0 0 50px 0; 
+    border-radius:8px;
+    background-color:#95b8d1;
+    text-align: center;
+    width: 50%;
+}
+
+.containerJavaScript h1{
+    padding: 20px 0;
+}
+
+.containerJavaScript button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    width: 50%;
+    background-color: #bfd9ec;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
 }
 
 .bibliografia{

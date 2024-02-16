@@ -4,6 +4,7 @@ function labCuatro(){
     contador(arreglo)
     promedios(matriz)
     inverso(num)
+    crearHorario(ofertaEducativa)
 }
 
 function tabla(){
@@ -75,26 +76,45 @@ function promedios(matriz){
 let num = 12345;
  
 function inverso(num){
-    let auxInverso = num => Number(num);
-    let arreglo = Array.from(String(num), auxInverso);
+    let FuncAuxInverso = num => Number(num);
+    let arreglo = Array.from(String(num), FuncAuxInverso);
     arreglo = arreglo.reverse();
     document.write("<h1>Pregunta 5</h1>");
     document.write(`<p> El inverso del arreglo es: [${arreglo}]</p>`);
-
-}
-
-const fotoKatUno = () => {
-    var img = document.getElementById("fotoKat");
-    img.src="img/kat.png";
-}
-
-const fotoKatDos = () => {
-    var img = document.getElementById("fotoKat");
-    img.src="img/kat2.png";
 }
 
 function cambiarImg(){
-    var img = document.getElementById("fotoKat");
-    if(img.src="img/kat.png"){ fotoKatDos()}
-    if(img.src="img/kat2.png"){fotoKatUno()}
+    const img = document.getElementById("fotoKat");
+    const imgSrc1 = "img/kat.jpeg";
+    const imgSrc2 = "img/kat2.png";
+    if (img.src.includes(imgSrc1)){
+        img.src = imgSrc2;
+    }
+    else{ img.src = imgSrc1;}
+}
+
+
+const Calendario = {
+    clase: "",
+    dias: "",
+    horas: "",
+    getClase: function getClase(){return this.clase},
+    getDias: function getDias(){return this.dias},
+    getHoras: function getHoras(){return this.horas}
+}
+
+const ofertaEducativa = [["Software", "Lunes, Martes, Jueves, Viernes", "9:00 - 13:00" ], ["Calculo", "Diario", "10:00 - 12:00"], ["Historia", "Lunes y Viernes", "7:00 - 10:00"], ["Ciencias de la salud", "Martes y Jueves", "8:00 - 11:00"], ["Economía", "Miercoles", "12:00 - 14:00"]]
+
+
+
+function crearHorario(ofertaEducativa){
+    const calendarioITC = Object.create(Calendario);
+    calendarioITC.clase = ofertaEducativa[0][0];
+    calendarioITC.dias = ofertaEducativa[1][1];
+    calendarioITC.horas = ofertaEducativa[1][2];
+    document.write("<h1>Calendario ITC</h1>");
+    document.write("<table>");
+    document.write("<tr><th>Clase</th><th>Dias</th><th>Horario</th></tr>");
+    document.write(`<tr><td>${calendarioITC.getClase()}</td><td>${calendarioITC.getDias()}</td><td>${calendarioITC.getHoras()}</td></tr>`);
+    document.write("</table>");
 }

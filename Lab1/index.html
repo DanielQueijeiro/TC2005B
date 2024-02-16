@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Laboratorio 1</title>
-        <link rel="stylesheet" href="style.min.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">  
@@ -12,24 +12,30 @@
 
     <body>
         <header>
-            <h1 class="titulo">Sobre mí</h1>
-            <p>Daniel Queijeiro Albo</p>
-            <p id="info">A01710441 - dany.queijeiro@hotmail.com</p> 
-            <img src="img/kat.jpeg" alt="Mi gata Kat" class="foto" id="fotoKat">
-            <button onclick="cambiarImg()"> Presionar si mi gata esta bonita</button>
+            <div class="tituloContainer">
+                <h1 class="titulo">Sobre mí</h1>
+                <p>Daniel Queijeiro Albo</p>
+                <p id="info">A01710441 - dany.queijeiro@hotmail.com</p> 
+            </div>
+                <button onclick="cambiarImg()"> Presionar para cambiar foto</button>
+                <img src="img/kat.jpeg" alt="Mi gata Kat" class="foto" id="fotoKat">
         </header>
 
         <main>
-            <h1 class="titulo">¿Quién soy?</h1>
-            <p>Soy Daniel Queijeiro Albo, tengo 19 años y me encuentro cursando mi cuarto semestre de Ingeniería en Tecnologías Computacionales en el Tec de Monterrey.</p>
-            <p><label>Mi fecha de nacimiento: <input type="datetime" placeholder="27 de Mayo del 2004" disabled></label></p>
-
-            <p>Mis hobbies son los videojuegos, el anime y manga. Y dentro del área de la tecnología me llama la atención la ciberseguridad y la inteligencia artificial.</p>
-
+            <div class="container">
+                <h1 class="titulo">¿Quién soy?</h1>
+                <p>Soy Daniel Queijeiro Albo, tengo 19 años y me encuentro cursando mi cuarto semestre de Ingeniería en Tecnologías Computacionales en el Tec de Monterrey.</p>
+                <p><label>Mi fecha de nacimiento: <input type="datetime" placeholder="27 de Mayo del 2004" disabled></label></p>
+                <p>Mis hobbies son los videojuegos, el anime y manga. Y dentro del área de la tecnología me llama la atención la ciberseguridad y la inteligencia artificial.</p>
+            </div>
+        <div class="container">
             <h1 class="titulo">Acerca de mi desarrollo profesional</h1>
 
             <p>El año pasado participé en el Hackatón "DefinSpace" donde en conjunto a mí equipo creamos las bases para un satélite. Terminamos en segundo lugar del Hackatón y actualmente estamos enfocados en desarrollar la idea del satélite.</p>
-            <img src="img/certificado.jpeg" alt="Certificado de segundo lugar" class="foto">
+        </div>
+
+            <img src="img/certificado.jpeg" alt="Certificado de segundo lugar" class="fotoCertificado">
+
 
             <div class="portafolio">
                 <h1>Mi portafolio</h1>
@@ -37,7 +43,7 @@
                 <a href="https://www.linkedin.com/in/daniel-queijeiro-albo-0377a2292/"><img src="img/linkedin.png" alt="Logo de Linkedin" id="linkedin"></a>
             </div>
 
-            <div class="container">
+            <div class="containerJavaScript">
                 <h1>Lab 4 - JavaScript</h1>
                 <button onclick="labCuatro()"> Ejecutar código de JavaScript</button>
             </div>
