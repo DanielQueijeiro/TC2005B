@@ -1,4 +1,5 @@
 function labCuatro(){
+    document.write('<link rel="stylesheet" href="style.css">')
     tabla()
     random()
     contador(arreglo)
@@ -35,7 +36,7 @@ function random(){
     document.write("<h1>Problema 2</h1>");
     if(respuesta == numeroUno + numeroDos){
        document.write(`<p>Respuesta correcta: ${respuesta}</p>`) 
-    } else{document.write(`<p>Respuesta incorrecta, era: ${respuesta}</p>`)}
+    } else{document.write(`<p>Respuesta incorrecta, era: ${numeroUno + numeroDos}</p>`)}
     document.write(`<p>El tiempo tardado en constestar fue de: ${timeTotal * 0.001} segundos.</p>`)
 
 }
@@ -95,26 +96,35 @@ function cambiarImg(){
 
 
 const Calendario = {
-    clase: "",
-    dias: "",
-    horas: "",
-    getClase: function getClase(){return this.clase},
-    getDias: function getDias(){return this.dias},
-    getHoras: function getHoras(){return this.horas}
+    clase: [],
+    dias: [],
+    horas: [],
+    addClase: function addClase(clase){this.clase.push(clase)},
+    addDias: function addDias(dia){this.dias.push(dia)},
+    addHora: function addHora(hora){this.horas.push(hora)},
+    getClase: function getClase(num){return this.clase[num]},
+    getDias: function getDias(num){return this.dias[num]},
+    getHoras: function getHoras(num){return this.horas[num]}
 }
 
-const ofertaEducativa = [["Software", "Lunes, Martes, Jueves, Viernes", "9:00 - 13:00" ], ["Calculo", "Diario", "10:00 - 12:00"], ["Historia", "Lunes y Viernes", "7:00 - 10:00"], ["Ciencias de la salud", "Martes y Jueves", "8:00 - 11:00"], ["Economía", "Miercoles", "12:00 - 14:00"]]
+const ofertaEducativa = [["Software", "Calculo", "Historia", "Ciencias de la salud", "Economía"],["Martes y Jueves", "Diario","Lunes y Viernes", "Martes y Jueves", "Miercoles"],["7:00 - 9:00", "9:00 - 11:00", "11:00 - 13:00", "13:00 - 115:00", "15:00 - 17:00"]]
 
-
+function getRandomInt() {
+    return Math.floor(Math.random() * 4);
+  }
 
 function crearHorario(ofertaEducativa){
     const calendarioITC = Object.create(Calendario);
-    calendarioITC.clase = ofertaEducativa[0][0];
-    calendarioITC.dias = ofertaEducativa[1][1];
-    calendarioITC.horas = ofertaEducativa[1][2];
+    let totalClases = parseInt(prompt("Cuantos creditos inscribiste este semestre? (Max:18)"));
+    totalClases = Math.floor(totalClases/4);
     document.write("<h1>Calendario ITC</h1>");
     document.write("<table>");
     document.write("<tr><th>Clase</th><th>Dias</th><th>Horario</th></tr>");
-    document.write(`<tr><td>${calendarioITC.getClase()}</td><td>${calendarioITC.getDias()}</td><td>${calendarioITC.getHoras()}</td></tr>`);
-    document.write("</table>");
+    for(let i = 0; i < totalClases; i++){
+        calendarioITC.addClase(ofertaEducativa[0][getRandomInt()]); 
+        calendarioITC.addDias(ofertaEducativa[1][getRandomInt()]);
+        calendarioITC.addHora(ofertaEducativa[2][getRandomInt()]);
+        document.write(`<tr><td>${calendarioITC.getClase(i)}</td><td>${calendarioITC.getDias(i)}</td><td>${calendarioITC.getHoras(i)}</td></tr>`);
+    }
+    document.write("</table>")
 }
