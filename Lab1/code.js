@@ -107,21 +107,36 @@ const Calendario = {
     getHoras: function getHoras(num){return this.horas[num]}
 }
 
-const ofertaEducativa = [["Software", "Calculo", "Historia", "Ciencias de la salud", "Economía"],["Martes y Jueves", "Diario","Lunes y Viernes", "Martes y Jueves", "Miercoles"],["7:00 - 9:00", "9:00 - 11:00", "11:00 - 13:00", "13:00 - 115:00", "15:00 - 17:00"]]
+const ofertaEducativa = [["Software", "Calculo", "Historia", "Ciencias de la salud", "Economía", "Gastronomía"],["Lunes", "Martes","Miercoles", "Jueves", "Viernes", "Sabado"],["7:00 - 9:00", "9:00 - 11:00", "11:00 - 13:00", "13:00 - 15:00", "15:00 - 17:00", "17:00 - 19:00"]]
+
+var listaMateriasUsadas = [];
 
 function getRandomInt() {
     return Math.floor(Math.random() * 4);
   }
 
+function checarClase(clase){
+    if(listaMateriasUsadas.length != 5){
+        if(!listaMateriasUsadas.includes(clase)){
+            listaMateriasUsadas.push(clase)
+            return clase
+        }
+        else { 
+            clase = ofertaEducativa[0][getRandomInt()];
+            checarClase(clase);
+        }
+    }
+}
+
 function crearHorario(ofertaEducativa){
     const calendarioITC = Object.create(Calendario);
-    let totalClases = parseInt(prompt("Cuantos creditos inscribiste este semestre? (Max:18)"));
+    let totalClases = parseInt(prompt("Cuantos creditos inscribiste este semestre? (Max:16)"));
     totalClases = Math.floor(totalClases/4);
     document.write("<h1>Calendario ITC</h1>");
     document.write("<table>");
     document.write("<tr><th>Clase</th><th>Dias</th><th>Horario</th></tr>");
     for(let i = 0; i < totalClases; i++){
-        calendarioITC.addClase(ofertaEducativa[0][getRandomInt()]); 
+        calendarioITC.addClase(checarClase(ofertaEducativa[0][getRandomInt()])); 
         calendarioITC.addDias(ofertaEducativa[1][getRandomInt()]);
         calendarioITC.addHora(ofertaEducativa[2][getRandomInt()]);
         document.write(`<tr><td>${calendarioITC.getClase(i)}</td><td>${calendarioITC.getDias(i)}</td><td>${calendarioITC.getHoras(i)}</td></tr>`);
