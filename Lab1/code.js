@@ -112,27 +112,31 @@ const ofertaEducativa = [["Software", "Calculo", "Historia", "Ciencias de la sal
 var listaMateriasUsadas = [];
 
 function getRandomInt() {
-    return Math.floor(Math.random() * 4);
+    return Math.floor(Math.random() * 6);
   }
 
 function checarClase(clase){
-    if(listaMateriasUsadas.length != 5){
+    console.log(clase ,"try")
+    console.log(listaMateriasUsadas)
+    if(listaMateriasUsadas.length != 6){
         if(!listaMateriasUsadas.includes(clase)){
             listaMateriasUsadas.push(clase)
+            console.log(listaMateriasUsadas, "post")
             return clase
         }
         else { 
             clase = ofertaEducativa[0][getRandomInt()];
-            checarClase(clase);
+            return checarClase(clase);
         }
     }
 }
 
 function crearHorario(ofertaEducativa){
     const calendarioITC = Object.create(Calendario);
-    let totalClases = parseInt(prompt("Cuantos creditos inscribiste este semestre? (Max:16)"));
-    totalClases = Math.floor(totalClases/4);
+    let totalClases = parseInt(prompt("Cuantos creditos inscribiste este semestre? (Max:18)"));
+    totalClases = Math.floor(totalClases/3);
     document.write("<h1>Calendario ITC</h1>");
+    document.write("<p>Para apoyar a los alumnos de ITC se hizo esta función para crear horarios con las materias registradas en la oferta educativa</p>");
     document.write("<table>");
     document.write("<tr><th>Clase</th><th>Dias</th><th>Horario</th></tr>");
     for(let i = 0; i < totalClases; i++){
