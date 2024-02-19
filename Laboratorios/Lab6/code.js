@@ -25,15 +25,21 @@ function checkPassword(){
             }); 
         }
         
+
         if(points >= 3){
+            var x = document.getElementById("yipee"); 
             img.src = "img/thumbsUp.png"
             let texto = document.getElementById("quality")
             texto.innerHTML = "Tu contraseña es segura";
+            x.play();
+       
 
         }
             else {
                 img.src ="img/thumbsDown.png" 
+                var x = document.getElementById("yoda"); 
                 let texto = document.getElementById("quality")
                 texto.innerHTML = "Tu contraseña es insegura";
+                x.play();
         } 
 }

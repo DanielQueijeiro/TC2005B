@@ -1,37 +1,3 @@
-<!-- <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-
-</head>
-<body>
-    <section class="section">
-        <div class="container">
-          <h1 class="title">
-            Verifica la seguridad de tu contraseña
-          </h1>
-
-    <main>
-        <div class="passwordContainer">
-            <label for="pwd">Password:</label>
-            <input type="password" id="pwd" name="pwd">
-            <button class="is-primary" onclick="cambiarImg()">Checar seguridad</button>
-
-            <label for="lvl">Security:</label>
-            <input id="lvl" name="security">
-        </div>
-
-        <div class="imgContainer">
-            <img src="img/confused.jpg" id="image">
-            <p></p>
-        </div>
-    </main>
-    <script src="code.js"></script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html class="has-background-info-light">
   <head>
@@ -49,6 +15,12 @@
 
         <div class="p-3 mt-2"> 
             <button class="button is-primary" id="boton" onclick="checkPassword()">Checar nivel de seguridad</button>
+            <audio id="yoda">
+              <source src="img/legoYoda.mp3" type="audio/mp3">
+            </audio>
+            <audio id="yipee">
+              <source src="img/Yipee.mp3" type="audio/mp3">
+            </audio>
             <h1 class="is-size-4 mt-2" id="quality"></h1>
         </div> 
         <img src="img/confused.png" id="image" width="224" height="48">
