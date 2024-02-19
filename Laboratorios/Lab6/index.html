@@ -33,27 +33,27 @@
 
 
 <!DOCTYPE html>
-<html>
+<html class="has-background-info-light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Laboratorio 6</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
-  <body> 
-    <div> 
-        <h1 class="title">Verifica la seguridad de tu constraseña</h1>  
-        <label for="">Constraseña:</label> 
-        <input type="text" id="password" placeholder="Escribe tu contraseña aqui" required/> 
-        <label for=""> 
-              Nivel de seguridad
-          </label> 
-        <div class="power-container"> 
-            <div id="power-point"></div> 
+  <body class="m-0 has-text-centered"> 
+    <div class="container"> 
+        <h1 class="title mt-2">Verifica la seguridad de tu constraseña</h1>  
+        <h1 class="subtitle">Recuerda que una contraseña incluye minusculas, mayusculas, numeros y simbolos.</h1> 
+        <input class="is-block mb-2 container is-widescreen px-4" type="text"  id="password" placeholder="Escribe tu contraseña aqui" required/> 
+
+        <div class="p-3 mt-2"> 
+            <button class="button is-primary" id="boton" onclick="checkPassword()">Checar nivel de seguridad</button>
+            <h1 class="is-size-4 mt-2" id="quality"></h1>
         </div> 
-        <img src="img/thumbsDown.jpg">
-        <button class="button is-primary" onclick="checkPassword()">Checar nivel de seguridad</button>
+        <img src="img/confused.png" id="image">
     </div> 
+
   <script src="code.js"></script>
   </body>
+  
 </html>
