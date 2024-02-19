@@ -1,0 +1,59 @@
+<!-- <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+          <h1 class="title">
+            Verifica la seguridad de tu contraseña
+          </h1>
+
+    <main>
+        <div class="passwordContainer">
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd">
+            <button class="is-primary" onclick="cambiarImg()">Checar seguridad</button>
+
+            <label for="lvl">Security:</label>
+            <input id="lvl" name="security">
+        </div>
+
+        <div class="imgContainer">
+            <img src="img/confused.jpg" id="image">
+            <p></p>
+        </div>
+    </main>
+    <script src="code.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Laboratorio 6</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body> 
+    <div> 
+        <h1 class="title">Verifica la seguridad de tu constraseña</h1>  
+        <label for="">Constraseña:</label> 
+        <input type="text" id="password" placeholder="Escribe tu contraseña aqui" required/> 
+        <label for=""> 
+              Nivel de seguridad
+          </label> 
+        <div class="power-container"> 
+            <div id="power-point"></div> 
+        </div> 
+        <img src="img/thumbsDown.jpg">
+        <button class="button is-primary" onclick="checkPassword()">Checar nivel de seguridad</button>
+    </div> 
+  <script src="code.js"></script>
+  </body>
+</html>
