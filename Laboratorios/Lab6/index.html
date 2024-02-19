@@ -40,17 +40,18 @@
     <title>Laboratorio 6</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
-  <body class="m-0 has-text-centered"> 
-    <div class="container"> 
+  <body>
+    <a class="button is-link m-4 is-inline-block" href="../Lab1/index.html">Regresar a Laboratorio 1</a>
+    <div class="container has-text-centered"> 
         <h1 class="title mt-2">Verifica la seguridad de tu constraseña</h1>  
-        <h1 class="subtitle">Recuerda que una contraseña incluye minusculas, mayusculas, numeros y simbolos.</h1> 
-        <input class="is-block mb-2 container is-widescreen px-4" type="text"  id="password" placeholder="Escribe tu contraseña aqui" required/> 
+        <h1 class="subtitle mb-4">Recuerda que una contraseña incluye minusculas, mayusculas, numeros y simbolos.</h1> 
+        <input class="is-block container is-widescreen px-4" type="text"  id="password" placeholder="Escribe tu contraseña aqui" required/> 
 
         <div class="p-3 mt-2"> 
             <button class="button is-primary" id="boton" onclick="checkPassword()">Checar nivel de seguridad</button>
             <h1 class="is-size-4 mt-2" id="quality"></h1>
         </div> 
-        <img src="img/confused.png" id="image">
+        <img src="img/confused.png" id="image" width="224" height="48">
     </div> 
 
   <script src="code.js"></script>
