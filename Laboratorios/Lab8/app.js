@@ -15,3 +15,15 @@ filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
 // server.listen(3000);
 
+arreglo = [10,23,45,123,545,343]
+
+function promedio(arreglo){
+    let total = 0;
+    for(let num of arreglo){
+        total = total + num;
+    }
+    let promedio = total/(arreglo.length);
+    console.log(promedio);
+}
+
+promedio(arreglo)
