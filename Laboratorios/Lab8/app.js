@@ -1,8 +1,5 @@
 console.log("hola")
 
-const filesystem = require('fs');
-
-filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
 // const http = require('http');
 
@@ -15,7 +12,7 @@ filesystem.writeFileSync('hola.txt', 'Hola desde node');
 
 // server.listen(3000);
 
-arreglo = [10,23,45,123,545,343]
+const arreglo = [10,23,45,123,545,343]
 
 function promedio(arreglo){
     let total = 0;
@@ -26,4 +23,15 @@ function promedio(arreglo){
     console.log(promedio);
 }
 
+
+string = "HOLA MUNDO, ESTA ES MI TAREA DE LAB 8"
+
+function escribirString(string){
+    const filesystem = require('fs');
+
+    filesystem.writeFileSync('Lab8.txt', string);
+}
+
+
 promedio(arreglo)
+escribirString(string);
