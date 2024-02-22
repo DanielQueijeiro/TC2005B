@@ -7,25 +7,82 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   </head>
   <body>
-    <a class="button is-link m-4 is-inline-block" href="../Lab1/index.html">Regresar a Laboratorio 1</a>
-    <div class="container has-text-centered"> 
-        <h1 class="title mt-2">Verifica la seguridad de tu constraseña</h1>  
-        <h1 class="subtitle mb-4">Recuerda que una contraseña incluye minusculas, mayusculas, numeros y simbolos.</h1> 
-        <input class="is-block container is-widescreen px-4" type="text"  id="password" placeholder="Escribe tu contraseña aqui" required/> 
+    <main>
+      <a class="button is-link m-4 is-inline-block" href="../Lab1/index.html">Regresar a Laboratorio 1</a>
+      <section class="hero size is-halfheight">
+        <div class="container has-text-centered"> 
+            <h1 class="title mt-2">Verifica la seguridad de tu constraseña</h1>  
+            <h1 class="subtitle mb-4">Recuerda que una contraseña incluye minusculas, mayusculas, numeros y simbolos.</h1> 
+            <input class="is-block container is-widescreen px-4" type="text"  id="password" placeholder="Escribe tu contraseña aqui" required/> 
 
-        <div class="p-3 mt-2"> 
-            <button class="button is-primary" id="boton" onclick="checkPassword()">Checar nivel de seguridad</button>
-            <audio id="yoda">
-              <source src="img/legoYoda.mp3" type="audio/mp3">
-            </audio>
-            <audio id="yipee">
-              <source src="img/Yipee.mp3" type="audio/mp3">
-            </audio>
-            <h1 class="is-size-4 mt-2" id="quality"></h1>
+            <div class="p-3 mt-2"> 
+                <button class="button is-primary" id="boton" onclick="checkPassword()">Checar nivel de seguridad</button>
+                <audio id="yoda">
+                  <source src="img/legoYoda.mp3" type="audio/mp3">
+                </audio>
+                <audio id="yipee">
+                  <source src="img/Yipee.mp3" type="audio/mp3">
+                </audio>
+                <h1 class="is-size-4 mt-2" id="quality"></h1>
+            </div> 
+            <img src="img/confused.png" id="image" width="224" height="48">
         </div> 
-        <img src="img/confused.png" id="image" width="224" height="48">
-    </div> 
+      </section>
 
+      <section class="container is-widescreen mt-4">
+        <h1 class="title">Preguntas Laboratorio 6</h1>
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?</p>
+          </div>
+          <div class="message-body">
+            <ol>
+              <li>Mejora la experiencia del usuario: Al validar los datos en tiempo real, se evitan errores y se proporciona retroalimentación inmediata al usuario, lo que mejora la experiencia de uso.
+              </li>
+              <li>Aumenta la seguridad: La validación de formularios ayuda a prevenir ataques como la inyección de código malicioso o la inserción de datos inválidos.
+              </li>
+              <li>Ahorra tiempo y recursos: Al validar los datos en el lado del cliente, se reduce la carga en el servidor y se evita el procesamiento de datos incorrectos.
+              </li>
+            </ol>
+          </div>
+        </article>
+
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?</p>
+          </div>
+          <div class="message-body">
+            <p>Es posible saltarse la seguridad de validaciones con la consola de JavaScript y modificar la estructura de la página.</p>
+          </div>
+        </article>
+
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?</p>
+          </div>
+          <div class="message-body">
+            <p>Es considerado una buena práctica debido a que la mayoría de usuarios no intentaran saltarse la seguridad y permite que los datos ingresados sean de valor para la página y no tengan errores o complicaciones.</p>
+          </div>
+        </article>
+
+        <article class="message is-dark">
+          <div class="message-header">
+            <p>Bibliografía</p>
+          </div>
+          <div class="message-body">
+            <ol>
+              <li>
+                Validación de formularios de datos - Aprende desarrollo web | MDN. (2023, 1 septiembre). MDN Web Docs. https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation
+              </li>
+              <li>
+                Ada. (2020, 12 septiembre). Cómo saltarse la validación HTML5 de un formulario. https://didacticode.com/como-saltarse-validacion-html5-formulario/
+              </li>
+            </ol>
+          </div>
+        </article>
+      </section>
+
+  </main>
   <script src="code.js"></script>
   </body>
   
