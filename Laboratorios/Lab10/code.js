@@ -1,9 +1,7 @@
 function arreglarBuffer(buffer){
-  for(let letter in buffer){
     buffer = buffer.replaceAll("%3A",":");
     buffer = buffer.replaceAll("%2F","/");
     buffer = buffer.replaceAll("+", " ");
-  }
   return buffer
 }
 
@@ -34,7 +32,7 @@ const header = `
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
                     <a class="navbar-item" href="/menu">
-                      Menú principal
+                      Menú personalizado
                     </a>
               
                     <a class="navbar-item" href="/crearpizza">
@@ -70,7 +68,7 @@ const footer = `
 </html>
 `;
 
-const menu = [{nombre: "pizza", imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"}];
+const menu = [{nombre: "Pizza clasica", imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"}];
 
 //http es un módulo de node con todas las funciones de un servidor web
 const http = require('http');
@@ -143,7 +141,7 @@ const server = http.createServer( (request, response) => {
 
         response.write(header);
         response.write(`
-        <h1 class="title">Agregar una construcción</h1>
+        <h1 class="title">Agregar una pizza</h1>
           <form action="/crearpizza" method="POST">
             <label class="label" for="nombre">Nombre</label>
             <input name="nombre" id="nombre" type="text" class="input"><br>
