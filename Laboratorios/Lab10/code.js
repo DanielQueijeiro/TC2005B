@@ -1,17 +1,27 @@
+function arreglarBuffer(buffer){
+  for(let letter in buffer){
+    buffer = buffer.replaceAll("%3A",":");
+    buffer = buffer.replaceAll("%2F","/");
+    buffer = buffer.replaceAll("+", " ");
+  }
+  return buffer
+}
+
+
 const header = `
     <!DOCTYPE html>
     <html lang="es">
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Minecraft</title>
+            <title>Pizzas</title>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         </head>
-        <body>
+        <body class="has-background-link-light">
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                   <a class="navbar-item" href="/">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT27Ahugh_giimXgC5jzZNAIdsZGxqjA-bvxw-4gRbBfF8evxX2rYwG4eI_fRiurOTiZ_c&usqp=CAU" width="112" height="28">
+                    <img src="https://e7.pngegg.com/pngimages/736/179/png-clipart-pizza-pizza-logo-pizza-icon-white-food.png" width="50" height="50">
                   </a>
               
                   <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -23,35 +33,22 @@ const header = `
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item" href="/">
-                      Home
+                    <a class="navbar-item" href="/menu">
+                      Menú principal
                     </a>
               
-                    <a class="navbar-item" href="/construir">
-                      Construir
+                    <a class="navbar-item" href="/crearpizza">
+                      Crea tu propia pizza!
                     </a>
-              
-                    <div class="navbar-item has-dropdown is-hoverable">
-                      <a class="navbar-link">
-                        More
-                      </a>
-              
-                      <div class="navbar-dropdown">
-                        <a class="navbar-item">
-                          About
-                        </a>
-                        <a class="navbar-item">
-                          Jobs
-                        </a>
-                        <a class="navbar-item">
-                          Contact
-                        </a>
-                        <hr class="navbar-divider">
-                        <a class="navbar-item">
-                          Report an issue
-                        </a>
-                      </div>
-                    </div>
+
+                    <a class="navbar-item" href="/contactanos">
+                      Contactanos
+                    </a>
+
+                    <a class="navbar-item" href="/error">
+                      Error 404 :)
+                    </a>
+
                   </div>
               
                   <div class="navbar-end">
@@ -78,9 +75,7 @@ const footer = `
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          <strong>Lab 9.</strong> - Daniel Queijeiro
         </p>
       </div>
     </footer>
@@ -88,7 +83,7 @@ const footer = `
 </html>
 `;
 
-const construcciones = [{nombre: "casa", imagen: "https://i.blogs.es/7cfcd0/casas-en-minecraft/1366_2000.jpeg"}];
+const menu = [{nombre: "pizza", imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"}];
 
 //http es un módulo de node con todas las funciones de un servidor web
 const http = require('http');
@@ -99,70 +94,75 @@ const server = http.createServer( (request, response) => {
 
     if (request.url === "/") {
 
+      response.setHeader('Content-Type', 'text/html');
+      response.write(header);
+      response.write(`
+        <h1 class="title">Bienvenidos a la Pizzeria!</h1>
+        <div class="columns">
+    `);
+    }
+
+    else if (request.url === "/menu") {
+
         response.setHeader('Content-Type', 'text/html');
         response.write(header);
         response.write(`
-          <h1 class="title">Hola mundo de Minecraft!</h1>
+          <h1 class="title">Nuestro menú personalizable!</h1>
           <div class="columns">
       `);
 
-        let tarjetas_construcciones = '';
-        for(let construccion of construcciones) {
-            tarjetas_construcciones += `
+        let tarjetas_pizza = '';
+        for(let pizza of menu) {
+            tarjetas_pizza += `
           <div class="column">
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img src="${construccion.imagen}" alt="Placeholder image">
+                    <img src="${pizza.imagen}" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="card-content">
                   <div class="media">
                     <div class="media-left">
                       <figure class="image is-48x48">
-                        <img src="${construccion.imagen}" alt="Placeholder image">
+                        <img src="${pizza.imagen}" alt="Placeholder image">
                       </figure>
                     </div>
                     <div class="media-content">
-                      <p class="title is-4">${construccion.nombre}</p>
-                      <p class="subtitle is-6">@johnsmith</p>
+                      <p class="title is-4">${pizza.nombre}</p>
                     </div>
                   </div>
               
                   <div class="content">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                    <p>Buena pizza :)</p>
                   </div>
                 </div>
               </div>
         </div>
         `;
         }
-        response.write(tarjetas_construcciones);
+        response.write(tarjetas_pizza);
         response.write(`</div>`);
         response.write(footer);
         response.end();
 
-    } else if (request.url === "/construir" && request.method === "GET") {
+    } else if (request.url === "/crearpizza" && request.method === "GET") {
 
         response.write(header);
         response.write(`
         <h1 class="title">Agregar una construcción</h1>
-          <form action="/construir" method="POST">
+          <form action="/crearpizza" method="POST">
             <label class="label" for="nombre">Nombre</label>
             <input name="nombre" id="nombre" type="text" class="input"><br>
             <label class="label" for="imagen">Imagen</label>
             <input name="imagen" id="imagen" type="text" class="input"><br><br>
-            <input class="button is-success" type="submit" value="Construir">
+            <input class="button is-success" type="submit" value="Añadir a menú">
           </form>
       `);
         response.write(footer);
         response.end();
 
-    } else if (request.url === "/construir" && request.method === "POST") {
+    } else if (request.url === "/crearpizza" && request.method === "POST") {
 
         const datos = [];
 
@@ -172,13 +172,14 @@ const server = http.createServer( (request, response) => {
         });
 
         return request.on('end', () => {
-            const datos_completos = Buffer.concat(datos).toString();
+            let datos_completos = Buffer.concat(datos).toString();
+            datos_completos = arreglarBuffer(datos_completos);
             console.log(datos_completos);
             const nombre = datos_completos.split('&')[0].split('=')[1];
             console.log(nombre);
             const imagen = datos_completos.split('&')[1].split('=')[1];
             console.log(imagen);
-            construcciones.push({nombre: nombre, imagen: imagen});
+            menu.push({nombre: nombre, imagen: imagen});
             return response.end();
         });
 
@@ -189,7 +190,7 @@ const server = http.createServer( (request, response) => {
 
         response.setHeader('Content-Type', 'text/html');
         response.write(header);
-        response.write(`<h1 class="title">Ups, esta aldea no existe</h1>`);
+        response.write(`<h1 class="title">No hay nada aquí....</h1>`);
         response.write(footer);
 
         response.end();
