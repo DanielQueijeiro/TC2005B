@@ -97,9 +97,15 @@ const server = http.createServer( (request, response) => {
       response.setHeader('Content-Type', 'text/html');
       response.write(header);
       response.write(`
-        <h1 class="title">Bienvenidos a la Pizzeria!</h1>
-        <div class="columns">
+        <section class="hero">
+        <div class="hero-body">
+          <h1 class="title">Bienvenidos a la Pizzeria!</h1>
+          <h1 class="subtitle">En nuestra página podrás crear tus propias pizza para luego ordenarlas y recogerlas en cualquiera de nuestras sucursales :)</h1>
+          <img class="" src="https://homebuddy.store/cdn/shop/articles/store_bought_pizza_dough_1024x.jpg?v=1616055784" height="500" width="720">
+        </div>
+        </section>
     `);
+    response.write(footer);
     }
 
     else if (request.url === "/menu") {
