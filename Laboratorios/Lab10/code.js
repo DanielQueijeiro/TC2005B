@@ -173,6 +173,7 @@ const server = http.createServer( (request, response) => {
             const imagen = datos_completos.split('&')[1].split('=')[1];
             console.log(imagen);
             menu.push({nombre: nombre, imagen: imagen});
+            response.write('<script>setTimeout(function () { window.location.href = "/menu"; }, 1000);</script>');
             return response.end();
         });
 
