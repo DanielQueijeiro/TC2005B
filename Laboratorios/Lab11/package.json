@@ -4,6 +4,7 @@
   "description": "Proyecto compañero del curso TC2005B grupo 2",
   "main": "code.js",
   "scripts": {
+    "start": "nodemon code.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
