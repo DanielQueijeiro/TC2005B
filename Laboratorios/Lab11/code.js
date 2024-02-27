@@ -5,11 +5,6 @@ function arreglarBuffer(buffer){
   return buffer
 }
 
-function registrarPizza(string){
-  const filesystem = require('fs');
-
-  filesystem.writeFileSync('PizzaCreada.txt', string);
-}
 
 const header = `
     <!DOCTYPE html>
@@ -74,8 +69,6 @@ const footer = `
 `;
 
 const menu = [{nombre: "Pizza clasica", imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"}];
-
-const ticket = [{nombre:"", comentarios:"", email:"" }];
 
 //http es un módulo de node con todas las funciones de un servidor web
 const http = require('http');
@@ -163,7 +156,6 @@ const server = http.createServer( (request, response) => {
     } else if (request.url === "/crearpizza" && request.method === "POST") {
 
         const datos = [];
-        let datosPizza = "";
 
         request.on('data', (dato) => {
             console.log(dato);
@@ -179,12 +171,60 @@ const server = http.createServer( (request, response) => {
             const imagen = datos_completos.split('&')[1].split('=')[1];
             console.log(imagen);
             menu.push({nombre: nombre, imagen: imagen});
-            datosPizza = "Nombre de la pizza: " + nombre + "\n" + "Imagen de la pizza: " + imagen;
             response.write('<script>setTimeout(function () { window.location.href = "/menu"; }, 1000);</script>');
-            registrarPizza(datosPizza);
             return response.end();
         });
+
+    } else if (request.url === "/contactanos" && request.method === "GET"){
+      response.write(header);
+      response.write(`
+
+      <form action="/contactanos" method="POST">
+        <div class="field">
+        <label class="label">Nombre</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Pon aquí tu nombre">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Comentarios</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="text" placeholder="Agradecemos tus comentarios">
+          <span class="icon is-small is-left">
+            <i class="fas fa-user"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="email" placeholder="ejemplo@correo.com">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-exclamation-triangle"></i>
+          </span>
+        </div>
+      </div>
+    </form>
+    `);
+      response.write(footer);
+      response.end();
+
+    } else if(request.url === "/contactanos" && response.method === "POST"){
+      response.write(header);
+      response.write(`
+      `)
+      response.write(footer);
+      response.end();
  
+
     } else {
 
         //Código de respuesta para recurso no encontrado
