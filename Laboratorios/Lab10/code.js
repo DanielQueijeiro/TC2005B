@@ -48,7 +48,7 @@ const header = `
                       Contactanos
                     </a>
 
-                    <a class="navbar-item" href="/error">
+                    <a class="navbar-item" href="/rutafalsa">
                       Error 404 :)
                     </a>
 
