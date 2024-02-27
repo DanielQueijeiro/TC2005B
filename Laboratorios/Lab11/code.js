@@ -67,7 +67,7 @@ app.get('/menu', (request, response, next) =>{
 
 app.post('/crearpizza', (request, response, next) =>{
   console.log(request.body);
-  menu.push(request.body);
+  menu.push(request.body);  
   let ticket = "";
   ticket += request.body.nombre + "\n" + request.body.imagen; 
   registrarPizza(ticket);
