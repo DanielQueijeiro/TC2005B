@@ -14,8 +14,10 @@ const menu = [{nombre: "Pizza clasica", imagen: "https://images.ctfassets.net/n7
 
 app.use(bodyParser.urlencoded({extended: false}));
 
+
+
 app.get('/menu', (request, response, next) =>{
-  response.send(`
+  let html_respuesta=`
   <!DOCTYPE html>
   <html lang="es">
       <head>
@@ -61,8 +63,53 @@ app.get('/menu', (request, response, next) =>{
             </nav>
           <section class="section">
               <div class="container">
-  `)
+              <h1 class="title">Nuestro menú personalizable!</h1>
+              <div class="columns">
+  `;
+  for (let pizza of menu) {
+    
+    html_respuesta += `
+    <div class="column">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="${pizza.imagen}" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="${pizza.imagen}" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">${pizza.nombre}</p>
+          </div>
+        </div>
+    
+        <div class="content">
+          <p>Buena pizza :)</p>
+        </div>
+        </div>
+        </div>
+      </div>`
+  }
 
+  html_respuesta += `
+  </div>
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Lab 9.</strong> - Daniel Queijeiro
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
+  `
+  response.send(html_respuesta);
 });
 
 app.post('/crearpizza', (request, response, next) =>{
@@ -71,7 +118,7 @@ app.post('/crearpizza', (request, response, next) =>{
   let ticket = "";
   ticket += request.body.nombre + "\n" + request.body.imagen; 
   registrarPizza(ticket);
-  response.redirect('/');
+  response.redirect('/menu');
 });
 
 app.get('/crearpizza',(request, response, next) =>{
@@ -144,7 +191,6 @@ app.get('/crearpizza',(request, response, next) =>{
 });
 
 app.get('/', (request, response, next) => {
-  console.log(request.body);
   response.send(`
   <!DOCTYPE html>
   <html lang="es">
