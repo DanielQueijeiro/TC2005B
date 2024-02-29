@@ -1,2 +1,2 @@
-pizza de queso
-https://thefoodtech.com/wp-content/uploads/2022/09/Pizza-cuatro-quesos-.jpg
+Nombre de la pizza: pizza de pollo con crema y queso
+Imagen de la pizza: https://thefoodtech.com/wp-content/uploads/2022/09/Pizza-cuatro-quesos-.jpg

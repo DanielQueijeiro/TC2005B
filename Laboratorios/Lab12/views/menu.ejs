@@ -1,40 +1,44 @@
 <%- include('includes/head.ejs') %>
-      <body class="has-background-link-light">
-          <section class="section">
-              <div class="container">
-              <h1 class="title">Nuestro menú personalizable!</h1>
-              <div class="columns">
-  <% for (let pizza of menu) { %>
-    
-    <div class="column">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <img src="<%= pizza.imagen%>" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="<%= pizza.imagen%>" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p class="title is-4"><%= pizza.nombre %></p>
-          </div>
-        </div>
-    
-        <div class="content">
-          <p>Buena pizza!</p>
-        </div>
-        </div>
-        </div>
-      </div>`
-  <% } %>
 
-  </div>
-  </section>
-  <%- include('includes/foot.ejs') %>
-</body>
-</html>
+  <body class="has-background-link-light">
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Nuestro menú personalizable!</h1>
+        <div class="columns">
+          <% for (let pizza of menu) { %>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="<%= pizza.imagen %>" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-l eft">
+                      <figure class="image is-48x48">
+                        <img src="<%= pizza.imagen %>" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">
+                        <%= pizza.nombre %>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <p>Buena pizza!</p>
+                  </div>
+                </div>
+              </div>
+            </div>`
+            <% } %>
+
+        </div>
+    </section>
+    <%- include('includes/foot.ejs') %>
+  </body>
+
+  </html>

@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({extended: false}));
+
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
@@ -11,10 +15,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const misRutas = require('./routes/pizzeria.routes');
 
 app.use('/', misRutas)
-
-const bodyParser = require('body-parser');
-
-app.use(bodyParser.urlencoded({extended: false}));
 
 app.use((request, response, next) =>{
   response.status(404);
