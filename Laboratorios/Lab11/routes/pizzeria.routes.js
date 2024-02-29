@@ -31,7 +31,7 @@ router.get('/crearpizza',(request, response, next) =>{
   response.render('pizzeria');
 });
 
-router.get('/main', (request, response, next) => {
+router.get('/', (request, response, next) => {
   response.render('main'); 
 });
 
