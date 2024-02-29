@@ -2,7 +2,7 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/main', (request, response, next) => {
+router.get('/', (request, response, next) => {
   response.render('main'); 
 });
 
