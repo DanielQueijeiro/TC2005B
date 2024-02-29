@@ -12,9 +12,11 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-const misRutas = require('./routes/pizzeria.routes');
+const rutaCrear = require('./routes/crear.routes');
+app.use('/', rutaCrear)
 
-app.use('/', misRutas)
+const rutaPizzeria = require('./routes/pizzeria.routes');
+app.use('/', rutaPizzeria)
 
 app.use((request, response, next) =>{
   response.status(404);

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Laboratorio 1 - 4</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">  
+    </head>
+
+    <body>
+        <header>
+            <div class="tituloContainer">
+                <h1 class="titulo">Sobre mí</h1>
+                <h3>Daniel Queijeiro Albo</h3>
+                <p id="info">A01710441 - dany.queijeiro@hotmail.com</p> 
+            </div>
+                <button onclick="cambiarImg()"> Presionar para cambiar foto</button>
+                <img src="img/kat.jpeg" alt="Mi gata Kat" class="foto" id="fotoKat">
+        </header>
+
+        <main>
+            <div class="container">
+                <h1 class="titulo">¿Quién soy?</h1>
+                <p>Soy Daniel Queijeiro Albo, tengo 19 años y me encuentro cursando mi cuarto semestre de Ingeniería en Tecnologías Computacionales en el Tec de Monterrey.</p>
+                <p><label>Mi fecha de nacimiento: <input type="datetime" placeholder="27 de Mayo del 2004" disabled></label></p>
+                <p>Mis hobbies son los videojuegos, el anime y manga. Y dentro del área de la tecnología me llama la atención la ciberseguridad y la inteligencia artificial.</p>
+            </div>
+        <div class="container">
+            <h1 class="titulo">Acerca de mi desarrollo profesional</h1>
+
+            <p>El año pasado participé en el Hackatón "DefinSpace" donde en conjunto a mí equipo creamos las bases para un satélite. Terminamos en segundo lugar del Hackatón y actualmente estamos enfocados en desarrollar la idea del satélite.</p>
+        </div>
+
+            <img src="img/certificado.jpeg" alt="Certificado de segundo lugar" class="fotoCertificado">
+
+
+            <div class="portafolio">
+                <h1>Mi portafolio</h1>
+                <a href="https://github.com/DanielQueijeiro/"><img src="img/github.png" alt="Logo de Github" id="github"></a>
+                <a href="https://www.linkedin.com/in/daniel-queijeiro-albo-0377a2292/"><img src="img/linkedin.png" alt="Logo de Linkedin" id="linkedin"></a>
+            </div>
+
+            <div class="containerJavaScript">
+                <h1>Lab 4 - JavaScript</h1>
+                <button onclick="labCuatro()"> Ejecutar código de JavaScript</button>
+            </div>
+
+            <div class="containerFramework">
+                <h1>Lab 5 - Framework TailwindCSS</h1>
+                <button onclick="location.href='../Lab5/build/indexFramework.html'">Da click para ir a la pagina diseñada con Tailwind</button>
+            </div>
+
+            <div class="containerFramework">
+                <h1>Lab 6 - DOM</h1>
+                <button onclick="location.href='../Lab6/index.html'">Da click para ir a la pagina del laboratorio 6</button>
+            </div>
+
+            <div class="container">
+                <h1>Preguntas a responder</h1>
+                <h1> Laboratorio 1</h1>
+                <ol>
+                    <li>¿Cuál es la diferencia entre Internet y la World Wide Web?
+                        <p>Internet es un sistema de computadoras que conforma una gran red de comunicación mundial, mientras que la World Wide Web es un sistema que funciona a través de Internet y permite transmitir diversos tipos de datos a través del Protocolo de Transferencia de Hipertextos (HTTP)</p>
+                    </li>
+
+                    <li>¿Cuáles son las partes de un URL?
+                        <p>Protocolo: Especifica la forma en que se accederá al recurso.</p>
+                        <p>Subdominio: Todo lo que aparece entre el protocolo y el primer punto que lo separa del dominio.</p>
+                        <p>Dominio: La dirección del sitio web en sí.</p>
+                        <p>TLD (Top Level Domain): Es la extensión del dominio.</p>
+                        <p>Ruta: Es la ubicación precisa del recurso dentro del servidor y puede incluir carpetas y subcarpetas</p>
+                    </li>
+                    
+                    <li>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+                        <p>GET: Solicita una representación de un recurso específico. Las peticiones que usan el método GET sólo deben recuperar datos</p>
+                        <p>HEAD: Pide una respuesta idéntica a la de una petición GET, pero sin el cuerpo de la respuesta</p>
+                        <p>POST: Se utiliza para enviar una entidad a un recurso en específico, causando a menudo un cambio en el estado o efectos secundarios en el servidor</p>
+                        <p>PUT: Reemplaza todas las representaciones actuales del recurso de destino con la carga útil de la petición</p>
+                        <p>PATCH: Es utilizado para aplicar modificaciones parciales a un recurso</p>
+                        <p>DELETE: Borra un recurso en específico</p>
+                    </li>
+
+                    <li>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?
+                        <p>El método POST se utiliza para enviar un formulario HTML. Esto se debe a que el método POST permite enviar datos en el cuerpo de la solicitud, lo que es más seguro y privado que enviarlos en la URL, como lo hace el método GET</p>
+                    </li>
+
+                    <li>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?
+                        <p>El método GET se utiliza cuando a través de un navegador web se accede a una página a través de un URL</p>
+                    </li>
+
+                    <li>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error?
+                        <p>El código de respuesta de estado satisfactorio HTTP 200 OK indica que la solicitud ha tenido éxito</p>
+                    </li>
+
+                    <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
+                        <p>Sí, es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404. Esto se debe a que el error 404 indica que el recurso solicitado no se encuentra en el servidor, lo que podría ser el resultado de un enlace roto o de un recurso que ha sido eliminado.</p>
+                    </li>
+
+                    <li>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
+                        <p>Sí, es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500. Este error indica un problema en el servidor que impide procesar la solicitud.</p>
+                    </li>
+
+                    <li>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+                        <p>Cuando un atributo HTML5 está depreciado o desaprobado, significa que ya no se recomienda su uso porque ha sido reemplazado por una opción más nueva o mejor.</p>
+                        <p>Algunos ejemplos de elementos desaprobados son: Applet, acronym, bgsound, dir, hgroup</p>
+                    </li>
+
+                    <li>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+                        <p>HTML5 es la versión más reciente y tiene varias mejoras y adiciones en comparación con HTML 4.</p>
+                        <p>HTML5 ofrece una sintaxis más flexible y coherente en comparación con HTML4.</p>
+                        <p>HTML5 introduce elementos como video y audio para un manejo más fácil de contenido multimedia.</p>
+                        <p>Nuevos elementos semánticos: HTML5 añade elementos semánticos como article, section, nav, header, footer, que ayudan a mejorar la estructura y la interpretación del contenido de la página web</p>
+                    </li>
+
+
+                    <li>¿Qué componentes de estructura y estilo tiene una tabla?
+                        <p>table: Crea el elemento de tabla.</p>
+                        <p>tr: Representa una fila.</p>
+                        <p>th: Representa las celdas de encabezado.</p>
+                        <p>td: Representa las celdas de datos.</p>
+                        <p>caption: Representa un título descriptivo en una tabla</p>
+                        <p>thead, tbody, tfoot: Representan la sección de encabezado, cuerpo y pie de la tabla respectivamente4.</p>
+                    </li>
+
+                    <li>¿Cuáles son los principales controles de una forma HTML5?
+                        <p>Algunos de los principales controles incluyen:</p>
+                        <p>input type="text" para texto de una sola línea y textarea para texto multilínea</p>
+                        <p>input type="checkbox" para casillas de verificación y input type="radio"> para botones de opción.</p>
+                        <p>button para botones personalizables y input type="submit" para el botón de envío del formulario.</p>
+                        <p>input type="email" para campos de correo electrónico, input type="url" para campos de URL, input type="datetime" para campos de fecha y hora, input type="color" para seleccionar un color, entre otros.</p>
+                    </li>
+
+                    <li>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? 
+                        <p>Con el navegador OperaGX tengo una calificación de 579 de 594 en soporte de HTML5.</p>
+                    </li>
+
+                    <li>¿Cuál es el ciclo de vida de los sistemas de información?
+                        <p>El ciclo de vida de un sistema de información es un modelo estructurado de gestión de proyectos que describe las fases necesarias para construir un sistema de información, desde el inicio hasta el resultado final. Este ciclo se compone de varias etapas:</p>
+                        <p>Planificación: Se decide lo que el sistema pretende lograr.</p>
+                        <p>Análisis de requerimientos: Se comprende qué se necesita para desarrollar con éxito el sistema.</p>
+                        <p>Diseño: Se estudian posibles alternativas de implementación y se decide la estructura general que tendrá el sistema.</p>
+                        <p>Desarrollo: Se seleccionan las herramientas adecuadas, un entorno de desarrollo que facilite nuestro trabajo y un lenguaje de programación apropiado para el tipo de sistema que vayamos a construir.</p>
+                        <p>Pruebas: Esta fase tiene como objetivo detectar los errores que se hayan podido cometer en las etapas anteriores del proyecto (y, eventualmente, corregirlos).</p>
+                        <p>Implementación: Se planifica el entorno en el que el sistema debe funcionar, tanto hardware como software.</p>
+                        <p>Operación y mantenimiento: Esta etapa consume típicamente del 40 al 80 por ciento de los recursos de una empresa de desarrollo de software. Se eliminan los defectos que se detecten durante su vida útil y se adapta el sistema a nuevas necesidades.</p>
+                    </li>
+
+                    <li>¿Cuál es el ciclo de desarrollo de sistemas de información?
+                        <p>El ciclo de desarrollo de sistemas de información, también conocido como ciclo de vida del desarrollo de software (SDLC), es un proceso estructurado que los equipos de desarrollo utilizan para diseñar y crear software de alta calidad Este ciclo se compone de varias etapas:</p>
+                        <p>Planificación: Se recopilan los requisitos de varias partes interesadas para crear un documento de especificaciones con los requisitos del software.</p>
+                        <p>Análisis de requerimientos: Se comprende qué se necesita para desarrollar con éxito el sistema.</p>
+                        <p>Diseño: Se analizan los requisitos e identifican las mejores soluciones para crear el software.</p>
+                        <p>Desarrollo: Se seleccionan las herramientas adecuadas, un entorno de desarrollo que facilite nuestro trabajo y un lenguaje de programación apropiado para el tipo de sistema que vayamos a construir.</p>
+                        <p>Pruebas: Esta fase tiene como objetivo detectar los errores que se hayan podido cometer en las etapas anteriores del proyecto (y, eventualmente, corregirlos).</p>
+                        <p>Implementación: Se planifica el entorno en el que el sistema debe funcionar, tanto hardware como software.</p>
+                        <p>Operación y mantenimiento: Esta etapa consume típicamente del 40 al 80 por ciento de los recursos de una empresa de desarrollo de software. Se eliminan los defectos que se detecten durante su vida útil y se adapta el sistema a nuevas necesidades.</p>
+                    </li>
+
+                    <li>¿Cuál es la diferencia entre el ciclo de vida y el ciclo de desarrollo del software?
+                        <p>El ciclo de vida del software y el ciclo de desarrollo del software son dos conceptos que a menudo se utilizan de manera intercambiable, pero tienen matices que los diferencian:</p>
+                        <p>El ciclo de vida del software se refiere a la secuencia completa de actividades o fases que un software atraviesa desde que se concibe hasta que se retira o deja de usarse. Este ciclo incluye fases como la concepción, el desarrollo, la operación, el mantenimiento y, finalmente, la retirada del software.</p>
+                        <p>Por otro lado, el ciclo de desarrollo del software, también conocido como ciclo de vida del desarrollo de software (SDLC), se centra más en el proceso de desarrollo del software. Este ciclo incluye fases como la planificación, el análisis de requisitos, el diseño, la codificación, las pruebas, la implementación y el mantenimiento.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="container">
+                <h1>Laboratorio 3</h1>
+                <ol>
+                    <li>Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS? 
+                        <p>El uso de !important puede ser útil pero tiene que ser usada con mucho cuidado porque puede llegar a causar conflictos al momento de seguir desarrollando la página o al trabajar con otras personas para que entiendan el CSS</p>
+                    </li>
+
+                    <li>Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?
+                        <p>Hay que tener cuidado que la imagen no cause problemas al usuario para leer la página. Al igual que debe tener buena calidad para que no se vea mal.</p>
+                    </li>
+
+                    <li>
+                        Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?
+                        <p>Cada unidad tiene sus ventajas y desventajas, lo importante es saber que unidad es la adecuada usar para que sea eficiente y tenga encuenta la accesibilidad y portabilidad.</p>
+                    </li>
+
+                    <li>
+                        ¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?
+                        <p>Al minimizar el CSS reduce el tamaño de los archivos de hojas de estilo CSS en cascada para que se carguen más rápido.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="container">
+                <h1>Laboratorio 4</h1>
+                <ol>
+                    <li>¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+                        <table class="tabla">
+                            <tr>
+                                <th>Java</th>
+                                <th>JavaScript</th>
+                            </tr>
+                            <tr>
+                                <td>Java es un lenguaje compilado</td>
+                                <td>JavaScript es un lenguaje interpretado</td>
+                            </tr>
+                            <tr>
+                                <td>Java es un lenguaje de programación orientado a objetos</td>
+                                <td>JavaScript está basado en prototipos y puede emular la programación orientada a objetos</td>
+                            </tr>
+                            <tr>
+                                <td>Java requiere un entorno de ejecución llamado Java Virtual Machine (JVM) para ejecutar el código.</td>
+                                <td>JavaScript se ejecuta en el navegador del usuario final</td>
+                            </tr>
+                            <tr>
+                                <td>Java es fuertemente tipado</td>
+                                <td>JavaScript es débilmente tipado</td>
+                            </tr>
+                        </table>
+                    </li>
+
+                    <li>¿Qué métodos tiene el objeto Date?
+                        <p>El método getDate() devuelve el día del mes para la fecha especificada de acuerdo con la hora local.</p>
+                        <p>El método getFullYear() devuelve el año de la fecha indicada acorde a la hora local.</p>
+                        <p>El método getMinutes() devuelve los minutos de la fecha especificada en función de la hora local.</p>
+                        <p>El método getTime() devuelve el valor numérico correspondiente a la hora para la fecha especificada según la hora universal.</p>
+                        <p>El método now devuelve los milisegundos transcurridos desde las 00:00:00 UTC del 1 de enero de 1970 justo hasta ahora como un Number.</p>
+                    </li>
+
+                    <li>¿Qué métodos tienen los arreglos?
+                        <p>El método concat() se usa para unir dos o más arrays. Este método no cambia los arrays existentes, sino que devuelve un nuevo array.</p>
+                        <p>El método find() devuelve el valor del primer elemento del array que cumple la función de prueba proporcionada.</p>
+                        <p>El método push() añade uno o más elementos al final de un array y devuelve la nueva longitud del array.</p>
+                        <p>El método Array.of() crea una nueva instancia Array con un número variable de elementos pasados como argumento, independientemente del número o del tipo.</p>
+                        <p>El método reduce() ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.</p>
+                    </li>
+
+                    <li>¿Cómo se declara una variable con alcance local dentro de una función?
+                        <p>Con la declaración "let" la variable será local con ámbito de bloque, opcionalmente la inicia a un valor.</p>
+                    </li>
+
+                    <li>¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+                        <p>Problemas de mantenibilidad y colisiones de nombres: El uso excesivo de variables y funciones globales puede llevar a problemas de mantenibilidad y colisiones de nombres. Esto puede hacer que el código sea más difícil de entender y mantener.</p>
+                        <p>Modificación de variables globales: Una variable global puede ser utilizada e incluso modificada dentro de una función. Esto puede llevar a comportamientos inesperados si no se maneja correctamente.</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="bibliografia">
+                <h1>Bibliografía</h1>
+                <h1> Laboratorio 1</h1>
+                <ul>
+                    <li>BBC News Mundo. (2019, 12 marzo). ¿Cuál es la diferencia entre internet y la web? (y por qué muchos las confunden). BBC News Mundo. https://www.bbc.com/mundo/noticias-47538812</li>
+                    <li>¿Qué es una URL? Todo lo que necesita saber. (2024, 16 enero). SoftwareLab. https://softwarelab.org/es/blog/que-es-una-url/</li>
+                    <li>Diferenciador. (2020, 27 febrero). Diferencia entre internet y web. Diferenciador. https://www.diferenciador.com/diferencia-entre-internet-y-web/</li>
+                    <li>Métodos de petición HTTP - HTTP | MDN. (2023, 24 julio). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/HTTP/Methods</li>
+                    <li>POST - HTTP | MDN. (2023, 24 julio). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/HTTP/Methods/POST</li>
+                    <li>Equipo editorial de IONOS. (2020, 15 julio). HTTP Request: los métodos de petición que debes conocer. IONOS Digital Guide. https://www.ionos.es/digitalguide/hosting/cuestiones-tecnicas/http-request/</li>
+                    <li>200 OK - HTTP | MDN. (2023, 23 febrero). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/HTTP/Status/200</li>
+                    <li>404 not found - HTTP | MDN. (2023, 23 febrero). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/HTTP/Status/404</li>
+                    <li>500 Internal Server Error - HTTP | MDN. (2023, 16 febrero). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/HTTP/Status/500</li>
+                    <li>Experimental, desaprobado y obsoleto - El proyecto MDN | MDN. (2023, 19 septiembre). MDN Web Docs. https://developer.mozilla.org/es/docs/MDN/Writing_guidelines/Experimental_deprecated_obsolete</li>
+                    <li>Fernández, E. C. (2024, 31 enero). ¿Cuáles son las etiquetas obsoletas en HTML5? ¡Actualízate! Tokio School. https://www.tokioschool.com/noticias/etiquetas-obsoletas-html5/</li>
+                    <li>V, B., & V, B. (2023, 20 abril). La diferencia entre HTML y HTML5. Tutoriales Hostinger. https://www.hostinger.mx/tutoriales/diferencia-entre-html-y-html5</li>
+                    <li>Conceptos básicos de las tablas HTML - Aprende desarrollo web | MDN. (s. f.). MDN Web Docs. https://developer.mozilla.org/es/docs/Learn/HTML/Tables/Basics</li>
+                    <li>Controles de formulario originales - Aprende desarrollo web | MDN. (s. f.). MDN Web Docs. https://developer.mozilla.org/es/docs/Learn/Forms/Basic_native_form_controls</li>
+                    <li>Corvo, H. S. (2020, 15 septiembre). Ciclo de vida de un sistema de información (Fases). Lifeder. https://www.lifeder.com/ciclo-vida-sistema-informacion/</li>
+                    <li>¿Qué es el SDLC? - Explicación del ciclo de vida del desarrollo de software - AWS. (s.f.). Amazon Web Services, Inc. https://aws.amazon.com/es/what-is/sdlc/</li>
+                    <li>miguel@immune.institute. (2023, 7 marzo). Proceso de desarrollo de software y ciclo de vida. Immune Technology Institute. https://immune.institute/blog/proceso-desarrollo-software-ciclo-vida/</li>
+                </div>   
+                
+                <div class="bibliografia">
+                    <h1>Laboratorio 3</h1>
+                    <ul>
+                        <li>!important - CSS: Cascading Style Sheets | MDN. (2023, 20 diciembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/CSS/important</li>
+                        <li>CSS values and units - Learn web development | MDN. (2024, 6 febrero). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units</li>
+                        <li>Cloudfare. (s.f.). Cómo minificar el CSS para mejorar el rendimiento del sitio web. Recuperado 13 de febrero de 2024, de https://www.cloudflare.com/es-es/learning/performance/how-to-minify-css</li>
+                    </ul>
+                </div>
+
+                <div class="bibliografia">
+                    <h1>Laboratorio 4</h1>
+                    <ul>
+                        <li>Soria, M. C. (2023, 23 mayo). ¿Qué diferencias hay entre JavaScript y Java? Hack A Boss. Recuperado 16 de febrero de 2024, de https://www.hackaboss.com/blog/diferencias-javascript-java.</li>
+                        <li>Date - JavaScript | MDN. (2023, 25 septiembre). MDN Web Docs. https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date</li>
+                        <li>Array - JavaScript | MDN. (s. f.). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array</li>
+                        <li>Gramática y tipos - JavaScript | MDN. (2023, 24 julio). MDN Web Docs. https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Grammar_and_types</li>
+                        <li>KeepCoding, R. (2023, 18 septiembre). ¿Qué son los objetos globales en JavaScript y cómo usarlos? KeepCoding Bootcamps. https://keepcoding.io/blog/objetos-globales-en-javascript-y-como-usarlos/</li>
+                    </ul>
+                </div>
+        </main>
+
+        <footer>
+            <p>Visual Studio Code - https://code.visualstudio.com</p>
+        </footer>
+        <script src="js/lab1.js"></script>
+    </body>
+</html>

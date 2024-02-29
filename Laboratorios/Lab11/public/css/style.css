@@ -1,0 +1,198 @@
+body{
+    margin: 0 auto; 
+    max-width: 50em; 
+    line-height: 1.5;
+    padding: 0 1em;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    background-color: #d6eadf;
+}
+
+.tituloContainer{
+    margin: 20px 0; 
+    border-radius:8px;
+    background-color:#95b8d1;
+    text-align: center;
+}
+
+.tituloContainer p{
+    padding-bottom: 10px;
+    font-size:15px;
+}
+
+header button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    width: 25%;
+    background-color: #95b8d1;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
+}
+
+header button:hover{
+    background-color: #709cbb;
+    transform: scale(1.01);
+}
+
+.titulo{
+    margin: 50px 0 0 0;
+    text-align: center;
+}
+
+.foto{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 25%;
+}
+.container li,p{
+    padding-bottom: 10px;
+    margin: 10px;
+    font-size:18px
+}
+header p{
+    font-size:25px
+}
+
+.portafolio {
+    float: left;
+    margin: 30px auto;
+    text-align: center;
+    width: 45%;
+    border-radius: 8px;
+    background-color: #95b8d1;
+}
+#github{
+    margin:0 0 0 18px;
+    width:75px
+}
+#linkedin{
+    width:130px
+}
+.container{
+    margin: 20px 0; 
+    border-radius:8px;
+    background-color:#95b8d1;
+}
+.container h1{
+    padding:10px 0 0 5px
+}
+.container h3{
+    padding:0 0 0 5px;
+}
+.container li{
+    font-weight:700;
+    font-style:italic;
+}
+.container p{
+    font-size:15px;
+    font-weight:400;
+    font-style:normal;
+}
+
+.fotoCertificado{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.containerJavaScript{
+    position: relative;
+    margin: 30px 55%;
+    padding: 0px 0px 63px 0;
+    border-radius: 8px;
+    background-color: #95b8d1;
+    text-align: center;
+    width: 45%;
+}
+
+.containerJavaScript h1{
+    padding: 20px 0;
+}
+
+.containerJavaScript button{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 5px;
+    width: 50%;
+    background-color: #bfd9ec;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
+}
+
+.containerFramework{
+    margin: 30px auto;
+    padding: 0px 0px 63px 0;
+    border-radius: 8px;
+    background-color: #95b8d1;
+    text-align: center;
+    width: 100%;
+}
+
+.containerFramework h1{
+    padding: 20px 0;
+}
+
+.containerFramework button{
+    margin: 0 auto;
+    border-radius: 5px;
+    width: 75%;
+    background-color: #bfd9ec;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    border: none;
+    transition: 1s all;
+    cursor: pointer;
+    display: block;
+}
+
+.tabla{
+    margin-top: 10px;
+    width: 95%;
+    font-weight: normal;
+    border-collapse: collapse;
+    border: 2px solid black;
+    letter-spacing: 1px;
+    font-size: 0.8rem;  
+}
+
+.tabla th, td{
+    text-align: center;
+    border: 2px solid black;
+    padding: 10px 20px;
+  
+}
+
+.bibliografia{
+    margin: 20px 0;
+    border-radius:8px;
+    background-color:#95b8d1;
+    padding: 10px 10px;
+}
+
+.bibliografia li{
+    font-style:italic;
+    margin:5px 0;
+}
+footer{
+    margin:50px 0;
+    text-align:center;
+}
+footer p{
+    font-size:12px;
+}
