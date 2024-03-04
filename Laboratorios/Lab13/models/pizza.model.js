@@ -9,7 +9,7 @@ const menu = [{
 module.exports = class Menu {
 
     constructor(mi_nombre, mi_imagen){
-        this.nombre = mi_imagen;
+        this.nombre = mi_nombre;
         this.imagen = mi_imagen;
     }
 
