@@ -1,7 +1,4 @@
-const menu = [{
-    nombre: "Pizza clasica", 
-    imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"
-}];
+const Menu = require('../models/pizza.model')
 
 function registrarPizza(string){
     const filesystem = require('fs');
@@ -15,14 +12,19 @@ exports.get_pizzeria = (request, response, next) =>{
 
 exports.post_pizza = (request, response, next) =>{
     console.log(request.body);
-    menu.push(request.body);  
+    const menu = new Menu(request.body.nombre, request.body.imagen);
+    menu.save();
     let ticket = "Nombre de la pizza: " + request.body.nombre + "\nImagen de la pizza: " + request.body.imagen; 
     registrarPizza(ticket);
     response.redirect('/menu');
   };
 
-  exports.get_menu = (request, response, next) => {
+exports.get_menu = (request, response, next) => {
     response.render('menu', {
-        menu: menu
+        menu: Menu.fetchAll()
     });
-  };
+};
+
+exports.get_main = (request, response, next) => {
+    response.render('main'); 
+};
