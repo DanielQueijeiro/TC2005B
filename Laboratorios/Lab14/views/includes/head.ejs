@@ -31,7 +31,7 @@
                   Crea tu propia pizza!
                 </a>
 
-                <a class="navbar-item" href="/contactanos">
+                <a class="navbar-item" href="/error">
                   Contactanos
                 </a>
               </div>
@@ -39,9 +39,9 @@
                 <div class="navbar-item">
                   <div class="buttons">
                 <% if (username == ''){ %>
-                  <a class="navbar-item" href="/users/login">
-                    Registrarse
-                  </a>
+                <a href="/users/login" class="button is-primary">
+                    Entrar
+                </a>
               <% } else { %>
                 <span>
                   Hola <strong><%= username %>!</strong>

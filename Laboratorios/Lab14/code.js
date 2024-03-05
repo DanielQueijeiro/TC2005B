@@ -28,7 +28,7 @@ app.use('/', rutaCrear)
 
 app.use((request, response, next) =>{
   response.status(404);
-  response.sendFile(path.join(__dirname, 'views', '404.ejs'));
+  response.sendFile(path.join(__dirname, 'views', '404.html'));
 });
 
 
