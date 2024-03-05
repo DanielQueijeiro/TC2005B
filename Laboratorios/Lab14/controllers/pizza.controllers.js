@@ -1,7 +1,9 @@
 const Menu = require('../models/pizza.model')
 
 exports.get_pizzeria = (request, response, next) =>{
-    response.render('pizzeria');
+    response.render('pizzeria',{
+        username: request.session.username || '',
+    });
 };
 
 exports.post_pizza = (request, response, next) =>{
@@ -22,9 +24,12 @@ exports.get_menu = (request, response, next) => {
     response.render('menu', {
         menu: Menu.fetchAll(),
         ultima_pizza: ultima_pizza,
+        username: request.session.username || '',
     });
 };
 
 exports.get_main = (request, response, next) => {
-    response.render('main'); 
+    response.render('main',{
+        username: request.session.username || '',
+    }); 
 };

@@ -20,12 +20,15 @@ const path = require('path')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+const rutasUsuarios = require('./routes/usuarios.routes')
+app.use('/users', rutasUsuarios)
+
 const rutaCrear = require('./routes/crear.routes');
 app.use('/', rutaCrear)
 
 app.use((request, response, next) =>{
   response.status(404);
-  response.sendFile(path.join(__dirname, 'views', '404.html'));
+  response.sendFile(path.join(__dirname, 'views', '404.ejs'));
 });
 
 
