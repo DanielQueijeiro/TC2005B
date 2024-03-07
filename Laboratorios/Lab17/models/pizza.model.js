@@ -1,10 +1,6 @@
 const filesystem = require('fs');
 
-const menu = [{
-    nombre: "Pizza clasica", 
-    imagen: "https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg"
-}];
-
+const db = require('../util/database');
 
 module.exports = class Menu {
 
@@ -14,16 +10,15 @@ module.exports = class Menu {
     }
 
     save() {
-        menu.push({
-            nombre: this.nombre,
-            imagen: this.imagen,
-        });
         let ticket = "Nombre de la pizza: " + this.nombre + "\nImagen de la pizza: " + this.imagen; 
         filesystem.writeFileSync('PizzaCreada.txt', ticket);
+        return db.execute('INSERT INTO pizza (nombre, imagen, username) VALUES (?, ?, "DanielQ")',
+        [this.nombre, this.imagen]
+    );
     }
     
     static fetchAll() {
-        return menu;
+       return db.execute('SELECT * FROM pizza');
     }
 }
 

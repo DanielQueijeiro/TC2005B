@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-03-2024 a las 17:02:30
+-- Tiempo de generación: 07-03-2024 a las 17:29:20
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,13 @@ CREATE TABLE `pizza` (
   `username` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `pizza`
+--
+
+INSERT INTO `pizza` (`id`, `nombre`, `imagen`, `created_at`, `username`) VALUES
+(1, 'Pizza clasica', 'https://images.ctfassets.net/n7hs0hadu6ro/1O0Be1dObiQBm17GQJHLj8/3fde720730f0b3616ecf5a82b928e7f9/pizza-a-domicilio-cerca-de-mi.jpg', '2024-03-07 16:23:59', 'DanielQ');
+
 -- --------------------------------------------------------
 
 --
@@ -46,6 +53,13 @@ CREATE TABLE `usuario` (
   `password` varchar(800) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`username`, `password`, `created_at`) VALUES
+('DanielQ', 'patata', '2024-03-07 16:23:17');
 
 --
 -- Índices para tablas volcadas
@@ -72,7 +86,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `pizza`
 --
 ALTER TABLE `pizza`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restricciones para tablas volcadas

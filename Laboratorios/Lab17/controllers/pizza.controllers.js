@@ -9,9 +9,11 @@ exports.get_pizzeria = (request, response, next) =>{
 exports.post_pizza = (request, response, next) =>{
     console.log(request.body);
     const menu = new Menu(request.body.nombre, request.body.imagen);
-    menu.save();
-    response.setHeader('Set-Cookie', 'ultima_pizza=' + request.body.nombre + '; HttpOnly')
-    response.redirect('/menu');
+    menu.save()
+        .then(([rows, fieldData]) => {
+            response.setHeader('Set-Cookie', 'ultima_pizza=' + request.body.nombre + '; HttpOnly')
+            response.redirect('/menu');})
+        .catch((error) => {console.log(error)});
   };
 
 exports.get_menu = (request, response, next) => {
@@ -21,10 +23,17 @@ exports.get_menu = (request, response, next) => {
     } else { 
         ultima_pizza = ''
     }
-    response.render('menu', {
-        menu: Menu.fetchAll(),
+
+    Menu.fetchAll().then(([rows, fieldData]) => {
+        console.log(rows);
+        response.render('menu', {
+        menu: rows,
         ultima_pizza: ultima_pizza,
         username: request.session.username || '',
+        })
+    })
+        .catch(error => {
+        console.log(error);
     });
 };
 
