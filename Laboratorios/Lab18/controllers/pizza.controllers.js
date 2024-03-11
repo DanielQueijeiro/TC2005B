@@ -8,7 +8,7 @@ exports.get_pizzeria = (request, response, next) =>{
 
 exports.post_pizza = (request, response, next) =>{
     console.log(request.body);
-    const menu = new Menu(request.body.nombre, request.body.imagen);
+    const menu = new Menu(request.body.username, request.body.password);
     menu.save()
         .then(([rows, fieldData]) => {
             response.setHeader('Set-Cookie', 'ultima_pizza=' + request.body.nombre + '; HttpOnly')
