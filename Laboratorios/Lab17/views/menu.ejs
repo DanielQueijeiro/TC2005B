@@ -5,6 +5,13 @@
       <div class="container">
         <h1 class="title">Nuestro menú personalizable!</h1>
         <div class="columns">
+          <% if (menu.length < 1) { %>
+            <div class="notification is-info"
+              <button class="delete"></button>
+              No existe pizza con ese id.
+              </div>
+          <% } %>  
+
           <% for (let pizza of menu) { %>
             <% console.log(pizza.nombre) %>
 
