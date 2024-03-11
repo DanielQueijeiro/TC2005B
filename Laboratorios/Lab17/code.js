@@ -24,7 +24,7 @@ const rutasUsuarios = require('./routes/usuarios.routes')
 app.use('/users', rutasUsuarios)
 
 const rutaCrear = require('./routes/crear.routes');
-app.use('/', rutaCrear)
+app.use('/crear', rutaCrear)
 
 app.use((request, response, next) =>{
   response.status(404);

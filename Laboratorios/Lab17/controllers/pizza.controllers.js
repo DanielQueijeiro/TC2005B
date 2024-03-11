@@ -12,7 +12,7 @@ exports.post_pizza = (request, response, next) =>{
     menu.save()
         .then(([rows, fieldData]) => {
             response.setHeader('Set-Cookie', 'ultima_pizza=' + request.body.nombre + '; HttpOnly')
-            response.redirect('/menu');})
+            response.redirect('/crear/menu');})
         .catch((error) => {console.log(error)});
   };
 
@@ -24,7 +24,7 @@ exports.get_menu = (request, response, next) => {
         ultima_pizza = ''
     }
 
-    Menu.fetchAll().then(([rows, fieldData]) => {
+    Menu.fetch(request.params.pizza_id).then(([rows, fieldData]) => {
         console.log(rows);
         response.render('menu', {
         menu: rows,

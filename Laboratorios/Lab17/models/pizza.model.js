@@ -20,5 +20,17 @@ module.exports = class Menu {
     static fetchAll() {
        return db.execute('SELECT * FROM pizza');
     }
+
+    static fetchOne(id) {
+        return db.execute('SELECT * FROM pizza WHERE id=?', [id]);
+     }
+    
+    static fetch(id){
+        if(id){
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
+    }
 }
 
