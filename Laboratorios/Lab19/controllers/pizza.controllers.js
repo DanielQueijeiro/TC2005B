@@ -43,5 +43,6 @@ exports.get_menu = (request, response, next) => {
 exports.get_main = (request, response, next) => {
     response.render('main',{
         username: request.session.username || '',
+        permisos: request.session.permisos || [],
     }); 
 };

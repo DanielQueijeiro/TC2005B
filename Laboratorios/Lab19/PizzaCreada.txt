@@ -1,0 +1,2 @@
+Nombre de la pizza: pizza de admin
+Imagen de la pizza: https://imag.bonviveur.com/pizza-con-diferentes-ingredientes-vegetales-y-jamon.jpg
