@@ -7,8 +7,8 @@ const pizzeriaController = require('../controllers/pizza.controllers')
   
   
 router.get('/menu', isAuth, canView, pizzeriaController.get_menu);
-router.post('/crearpizza', isAuth, pizzeriaController.post_pizza);
-router.get('/crearpizza', isAuth,  pizzeriaController.get_pizzeria);
+router.post('/crearpizza', isAuth, canCreate, pizzeriaController.post_pizza);
+router.get('/crearpizza', isAuth, canCreate, pizzeriaController.get_pizzeria);
 router.get('/menu/:pizza_id', isAuth, canView, pizzeriaController.get_menu)
 router.get('/', pizzeriaController.get_main);
 
