@@ -23,17 +23,20 @@
           
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
+                <% for(let funcion of permisos) {%>
+                <%  if(funcion.funcion == 'ver') { %>
                 <a class="navbar-item" href="/crear/menu">
                   Menú personalizado
                 </a>
+                <% } %>
           
+                <%  if(funcion.funcion == 'crear') { %>
                 <a class="navbar-item" href="/crear/crearpizza">
                   Crea tu propia pizza!
                 </a>
+                <%} %>
 
-                <a class="navbar-item" href="/error">
-                  Contactanos
-                </a>
+                <% }%>
               </div>
               <div class="navbar-end">
                 <div class="navbar-item">

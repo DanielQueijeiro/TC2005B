@@ -3,7 +3,8 @@ const Menu = require('../models/pizza.model')
 exports.get_pizzeria = (request, response, next) =>{
     response.render('pizzeria',{
         username: request.session.username || '',
-        csrfToken: request.csrfToken()
+        csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     });
 };
 
@@ -31,7 +32,7 @@ exports.get_menu = (request, response, next) => {
         menu: rows,
         ultima_pizza: ultima_pizza,
         username: request.session.username || '',
-        csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
         })
     })
         .catch(error => {
@@ -42,6 +43,5 @@ exports.get_menu = (request, response, next) => {
 exports.get_main = (request, response, next) => {
     response.render('main',{
         username: request.session.username || '',
-        csrfToken: request.csrfToken()
     }); 
 };

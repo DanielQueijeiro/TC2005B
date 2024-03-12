@@ -7,7 +7,8 @@ exports.get_login = (request, response, next) =>{
         username: request.session.username || '',
         error: error,
         registrar: false,
-        csrfToken: request.csrfToken()
+        csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     });
 }
 
@@ -20,17 +21,21 @@ exports.post_login = (request, response, next) =>{
             bcrypt.compare(request.body.password, user.password)
                 .then(doMatch => {
                     if (doMatch) {
-                        request.session.isLoggedIn = true;
-                        request.session.username = user.username;
-                        return request.session.save(err => {
-                            response.redirect('/crear/menu');
-                        });
+                        Usuario.getPermisos(user.username).then(([permisos, fieldData]) => {
+                            request.session.isLoggedIn = true;
+                            request.session.permisos = permisos;
+                            console.log(request.session.permisos);
+                            request.session.username = user.username;
+                            return request.session.save(err => {
+                                response.redirect('/crear/menu');
+                            });
+                        }).catch((error) => {console.log(error);});
                     } else {
                         request.session.error = 'El usuario y/o contraseña son incorrectos'
                         return response.redirect('/users/login');
                     }
                 }).catch(err => {
-                    response.redirect('/users/login');
+                    response.redirect('/users/signup');
                 });
         } else {
             request.session.error = 'El usuario y/o contraseña son incorrectos'
@@ -54,7 +59,8 @@ exports.get_signup = (request, response, next) => {
         username: request.session.username || '',
         error: error,
         registrar: true,
-        csrfToken: request.csrfToken()
+        csrfToken: request.csrfToken(),
+        permisos: request.session.permisos || [],
     });
 }
 
