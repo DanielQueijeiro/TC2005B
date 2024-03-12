@@ -15,6 +15,7 @@ module.exports = class User {
             [this.username, password_cifrado]);})
         .catch((error => {
             console.log(error)
+            throw Error('Nombre de usuario duplicado');
         }));
 
     }
