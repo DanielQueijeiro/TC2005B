@@ -20,6 +20,7 @@ module.exports = class User {
 
     }
 
+
     static fetchOne(username, password) {
         return db.execute('SELECT * FROM usuario WHERE username=?', [username]);
      }
