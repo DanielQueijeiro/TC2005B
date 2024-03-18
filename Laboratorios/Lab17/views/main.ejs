@@ -1,12 +1,48 @@
 <%- include('includes/head.ejs' , {username: username})%>
 
 <main>
-    <section class="hero">
-    <div class="hero-body">
-      <h1 class="title">Bienvenidos a la Pizzeria!</h1>
-      <h1 class="subtitle">En nuestra página podrás crear tus propias pizza para luego ordenarlas y recogerlas en cualquiera de nuestras sucursales :)</h1>
-      <img class="" src="https://homebuddy.store/cdn/shop/articles/store_bought_pizza_dough_1024x.jpg?v=1616055784" height="360" width="500">
+  <section class="hero">
+  <div class="hero-body">
+    <h1 class="title">Bienvenidos a la Pizzeria!</h1>
+    <h1 class="subtitle">En nuestra página podrás crear tus propias pizza para luego ordenarlas y recogerlas en cualquiera de nuestras sucursales :)</h1>
+    <img class="" src="https://homebuddy.store/cdn/shop/articles/store_bought_pizza_dough_1024x.jpg?v=1616055784" height="360" width="500">
+    <div class="content">
+      <h1 class="title mt-4">Preguntas Lab 17</h1>
+      <p class="subtitle has-text-weight-bold">¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</p>
+      <ul>
+        <li>
+          Separación de preocupaciones: Ayuda a mantener una clara separación de las responsabilidades dentro de la aplicación. La capa del modelo se encarga de interactuar con la base de datos, mientras que otras capas se centran en la lógica de negocio, la presentación de datos, etc.
+        </li>
+        <li>
+          Reutilización de código: Al tener toda la lógica de acceso a la base de datos en una sola capa, se facilita la reutilización del código. Esto significa que si necesitas realizar consultas similares en diferentes partes de la aplicación, puedes aprovechar las mismas consultas definidas en la capa del modelo.
+        </li>
+        <li>
+          Mantenimiento más sencillo: Al concentrar todas las consultas SQL en una única capa, el mantenimiento se vuelve más sencillo. Si necesitas realizar cambios en las consultas, solo tienes que hacerlos en un lugar, en lugar de buscar y actualizar múltiples ocurrencias en todo el código.
+        </li>
+        <li>
+          Mayor seguridad: Al encapsular todas las consultas SQL en la capa del modelo, puedes implementar medidas de seguridad más fácilmente, como la validación de datos, la prevención de inyecciones SQL y el control de acceso a la base de datos.
+        </li>
+        <li>
+          Facilita la prueba unitaria: Al separar la lógica de acceso a la base de datos del resto de la aplicación, se facilita la escritura de pruebas unitarias para esa lógica específica. Esto permite realizar pruebas más exhaustivas y precisas de la capa del modelo sin depender del estado de otras partes de la aplicación.
+        </li>
+      </ul>
+      <p class="subtitle has-text-weight-bold">¿Qué es SQL injection y cómo se puede prevenir?</p>
+      <p class="subtitle">SQL injection es una técnica de hacking que aprovecha las vulnerabilidades de seguridad en aplicaciones web que interactúan con bases de datos mediante consultas SQL. En un ataque de inyección SQL, un atacante inserta código SQL malicioso en los campos de entrada de una aplicación web, con el objetivo de manipular la consulta SQL original y ejecutar operaciones no autorizadas en la base de datos.</p>
+      <p class="subtitle">Para prevenir los ataques de inyección SQL, se deben implementar las siguientes prácticas de seguridad:</p>
+      <ul>
+        <li>
+          Validación de entrada de datos: Validar y sanitizar todas las entradas de datos recibidas de los usuarios para evitar que contengan caracteres especiales que puedan ser interpretados como código SQL.
+        </li>
+        <li>
+          Parámetros de consulta preparados (Prepared Statements): Usar consultas parametrizadas o preparadas, donde los valores de los parámetros se pasan por separado de la consulta SQL. Esto evita la concatenación directa de datos de usuario en la consulta y previene la inyección SQL.
+        </li>
+        <li>
+          Escapado de caracteres especiales: Escapar caracteres especiales como comillas simples, comillas dobles, barras invertidas, etc., antes de incluir datos de usuario en consultas SQL.
+        </li>
+      </ul>
     </div>
-    </section>
+
+  </div>
+  </section>
 
 <%- include('includes/foot.ejs') %>
