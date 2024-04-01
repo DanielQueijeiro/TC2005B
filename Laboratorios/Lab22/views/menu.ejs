@@ -1,0 +1,64 @@
+<%- include('includes/head.ejs' , 
+{username: username, permisos: permisos})%>
+
+  <body class="has-background-link-light">
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Nuestro menú personalizable!</h1>
+        <div class="columns">
+          <% if (menu.length < 1) { %>
+            <div class="notification is-info">
+              <button class="delete"></button>
+              No existe pizza con ese id.
+              </div>
+          <% } %>  
+
+          <% let columns = 0; %>
+          <% for (let pizza of menu) { %>
+            <% columns++ %>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="/uploads/<%= pizza.imagen %>" alt="Placeholder image">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-l eft">
+                      <figure class="image is-48x48">
+                        <img src="/uploads/<%= pizza.imagen %>" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4">
+                        <%= pizza.nombre %>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    <p>Buena pizza!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <% if (columns % 4 == 0) { %>
+            </div>
+            <div class="columns">
+            <% } %>
+
+
+          <% } %>
+
+          </div>
+        </div>
+
+        </div>
+    </section>
+    <%- include('includes/foot.ejs') %>
+  </body>
+
+  </html>

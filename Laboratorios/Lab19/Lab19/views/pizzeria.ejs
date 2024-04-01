@@ -1,0 +1,21 @@
+<%- include('includes/head.ejs' , 
+{username: username, permisos: permisos})%>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Agregar una pizza</h1>
+            <form action="/crear/crearpizza" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                <input type="hidden" name="username" value="<%= username %>" >
+                <label class="label" for="nombre">Nombre</label>
+                <input name="nombre" id="nombre" type="text" class="input"><br>
+                <label class="label" for="imagen">Imagen</label>
+                <input name="imagen" id="imagen" type="text" class="input"><br><br>
+                <input class="button is-success" type="submit" value="Añadir a menú">
+            </form>
+        </div>
+    </section>
+    <%- include('includes/foot.ejs') %>
+</body>
+
+</html>
