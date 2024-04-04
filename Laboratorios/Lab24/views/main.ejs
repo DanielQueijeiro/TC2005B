@@ -8,54 +8,45 @@
       <h1 class="subtitle">En nuestra página podrás crear tus propias pizza para luego ordenarlas y recogerlas en cualquiera de nuestras sucursales :)</h1>
       <img class="" src="https://homebuddy.store/cdn/shop/articles/store_bought_pizza_dough_1024x.jpg?v=1616055784" height="360" width="500">
       <div class="content">
-        <h1 class="title mt-4">Preguntas Lab 19</h1>
-        <p class="subtitle has-text-weight-bold">¿En qué consiste el control de acceso basado en roles?</p>
-          <p>
-            El control de acceso basado en roles (Role-Based Access Control, RBAC) es un modelo de seguridad que regula el acceso a recursos informáticos dentro de un sistema o red. En este modelo, el acceso a recursos se determina según los roles que desempeñan los usuarios dentro de una organización. Los roles representan conjuntos de responsabilidades, funciones o actividades dentro del sistema.</p>
-        <p class="subtitle has-text-weight-bold">Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.</p>
-            <p class="subtitle">Sistema con RBAC: Microsoft Active Directory</p>
-            <p>Descripción: Microsoft Active Directory es un servicio de directorio utilizado principalmente en entornos empresariales para gestionar identidades y recursos de red. Utiliza el modelo RBAC para controlar el acceso a los recursos dentro de una red. En Active Directory, los roles se definen mediante grupos de seguridad, y los usuarios se asignan a estos grupos para obtener los permisos necesarios.</p>
-            <p>Ventajas:</p>
+        <h1 class="title mt-4">Preguntas Lab 24</h1>
+        <p class="subtitle has-text-weight-bold">¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</p>
+        <ul>
+          <li>
+            Interactividad en tiempo real: AJAX permite a las aplicaciones web actualizar partes específicas de una página sin necesidad de recargar la página completa. Esto permite una experiencia de usuario más fluida y dinámica, similar a las aplicaciones de escritorio.
+          </li>
+          <li>
+            Mejora de la velocidad de carga: Al cargar solo los datos necesarios y actualizar partes específicas de una página, AJAX puede reducir la cantidad de datos transferidos entre el cliente y el servidor, lo que resulta en tiempos de carga más rápidos para los usuarios.
+          </li>
+          <li>
+            Menor uso de ancho de banda: Al cargar solo los datos necesarios, AJAX puede reducir el uso de ancho de banda en comparación con los enfoques tradicionales de carga de páginas completas, lo que puede ser especialmente beneficioso para usuarios con conexiones a Internet lentas o limitadas.
+          </li>
+        </ul>
+        <p class="subtitle has-text-weight-bold">¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</p>
+            <p>El uso de AJAX en aplicaciones web introduce algunas consideraciones de seguridad adicionales debido a la naturaleza asincrónica de las solicitudes y respuestas.</p>
             <ul>
               <li>
-                Centralización: Active Directory proporciona una plataforma centralizada para gestionar roles, usuarios y permisos en toda la red, lo que facilita la administración del acceso.
+                Cross-Site Scripting (XSS): AJAX puede ser vulnerable a ataques de XSS si no se sanitizan adecuadamente los datos antes de ser renderizados en el navegador. Es fundamental validar y filtrar todos los datos provenientes del cliente, tanto en el lado del cliente como en el servidor, para prevenir este tipo de ataques. Las herramientas de sanitización y la codificación adecuada de datos son esenciales para mitigar este riesgo.
               </li>
               <li>
-                Escalabilidad: Permite la creación de una estructura de roles escalable que se puede adaptar fácilmente a medida que la organización crece o cambian las necesidades de acceso.
+                Cross-Site Request Forgery (CSRF): Las solicitudes AJAX pueden ser vulnerables a ataques CSRF si no se implementan medidas de protección adecuadas, como tokens anti-CSRF. Estos tokens deben ser generados en el servidor y luego incluidos en las solicitudes AJAX como parte de la validación del lado del servidor.
               </li>
               <li>
-                Facilidad de administración: La asignación de roles a los usuarios simplifica la administración de permisos, ya que los cambios en los roles se reflejan automáticamente en los usuarios asignados.
+                Validación de entrada de datos: Cualquier dato enviado desde el cliente al servidor a través de solicitudes AJAX debe ser validado y sanitizado en el lado del servidor para prevenir ataques de inyección de código, como SQL Injection u otros tipos de inyección de código.
               </li>
             </ul>
-            <p>Desventajas:</p>
-              <ul>
-                <li>
-                  Complejidad inicial: Configurar correctamente los roles y permisos puede requerir un conocimiento técnico avanzado y planificación cuidadosa.
-                </li>
-                <li>
-                  Posibilidad de errores: Si los roles no se definen correctamente o se asignan incorrectamente, puede haber riesgos de seguridad y acceso inadecuado a los recursos.
-                </li>
-              </ul>
-              <p class="subtitle">Sistema sin RBAC: Sistema de Archivos Tradicional en Linux</p>
-              <p>Descripción: En un sistema de archivos tradicional en Linux, el control de acceso se basa en permisos de usuario y grupo asociados a cada archivo y directorio. No se utiliza un modelo de RBAC formalmente estructurado.</p>
-              <p>Ventajas:</p>
-              <ul>
-                <li>
-                  Simplicidad: El sistema de archivos tradicional es fácil de entender y utilizar, ya que los permisos se aplican directamente a archivos y directorios individuales.
-                </li>
-                <li>
-                  Granularidad: Los permisos se pueden establecer de manera muy específica para cada archivo o directorio, lo que proporciona un control detallado sobre quién puede acceder y qué acciones pueden realizar.
-                </li>
-              </ul>
-              <p>Desventajas:</p>
-                <ul>
-                  <li>
-                    Gestión fragmentada: La gestión de permisos puede volverse compleja en sistemas con muchos usuarios y recursos, ya que los permisos se aplican de forma independiente a cada archivo y directorio.
-                  </li>
-                  <li>
-                    Mayor riesgo de errores: La asignación manual de permisos a cada archivo y directorio puede aumentar el riesgo de errores humanos, como otorgar permisos incorrectos o olvidar ajustarlos adecuadamente.
-                  </li>
-                </ul>
+            <p class="subtitle has-text-weight-bold">¿Qué es JSON?</p>
+            <p>JSON (JavaScript Object Notation) es un formato de intercambio de datos ligero y legible por humanos que se utiliza comúnmente para transmitir datos estructurados entre un servidor y un cliente en aplicaciones web</p>
+            <ul>
+              <li>
+                Estructura de datos: JSON permite representar datos estructurados utilizando objetos y matrices. Los objetos se definen entre llaves {}, mientras que las matrices se definen entre corchetes []. Dentro de estos objetos y matrices, se pueden incluir pares de nombre/valor separados por dos puntos :.
+              </li>
+              <li>
+                Tipos de datos: JSON admite varios tipos de datos, incluyendo cadenas de texto, números, booleanos, objetos, matrices y valores nulos. Estos tipos de datos se pueden anidar para representar estructuras de datos más complejas.
+              </li>
+              <li>
+                Legibilidad humana: La sintaxis de JSON está diseñada para ser legible por humanos y fácil de entender, lo que lo hace útil tanto para los desarrolladores como para las aplicaciones que consumen y generan datos en este formato.
+              </li>
+            </ul>
     </div>
     </section>
 

@@ -31,6 +31,7 @@ exports.get_menu = (request, response, next) => {
         ultima_pizza: ultima_pizza,
         username: request.session.username || '',
         permisos: request.session.permisos || [],
+        csrfToken: request.csrfToken(),
         })
     })
         .catch(error => {
@@ -52,3 +53,14 @@ exports.get_buscar = (request, response, next) => {
     })
     .catch((error) => {console.log(error)})
 }
+
+exports.post_delete = (request, response, next) => {
+    Menu.delete(request.body.id)
+        .then(() => {
+            return Menu.fetch();
+        })
+        .then(([pizzas, fieldData]) => {
+            return response.status(200).json({pizzas: pizzas})
+        })
+        .catch((error) => {console.log(error)});
+};

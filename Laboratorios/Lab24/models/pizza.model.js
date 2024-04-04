@@ -37,5 +37,9 @@ module.exports = class Menu {
     static search(valor_busqueda){
         return db.execute(`SELECT * FROM pizza WHERE nombre LIKE ?`, ['%' + valor_busqueda + '%'])
     }
+
+    static delete(id){
+        return db.execute(`DELETE FROM pizza WHERE id=?`, [id]);
+    }
 }
 
