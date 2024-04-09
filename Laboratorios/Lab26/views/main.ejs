@@ -1,0 +1,81 @@
+<%- include('includes/head.ejs' , 
+{username: username, permisos: permisos})%>
+
+<main>
+  <section class="hero">
+      <div class="hero-body">
+          <h1 class="title">Bienvenidos a la Pizzeria!</h1>
+          <h1 class="subtitle">En nuestra página podrás crear tus propias pizza para luego ordenarlas y recogerlas en cualquiera de nuestras sucursales :)</h1>
+          <img class="" src="https://homebuddy.store/cdn/shop/articles/store_bought_pizza_dough_1024x.jpg?v=1616055784" height="360" width="500">
+          <div class="content">
+              <h1 class="title mt-4">Lab 26</h1>
+              <p class="subtitle has-text-weight-bold">¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?</p>
+              <p>La integración de aplicaciones web con servicios web desarrollados por terceros ofrece ventajas como la ampliación de funcionalidades sin necesidad de desarrollarlas internamente, el ahorro de tiempo y recursos, la especialización y experiencia de los proveedores externos, la escalabilidad y un mantenimiento simplificado. Sin embargo, también presenta desventajas como la dependencia externa, el riesgo de seguridad y privacidad, posibles costos adicionales y limitaciones de personalización y control.</p>
+              <p class="subtitle has-text-weight-bold">Servicio web</p>
+              <p>PokeAPI es una API que proporciona acceso a una extensa base de datos sobre la serie principal de juegos de Pokémon. Ofrece toda la información que puedas necesitar sobre Pokémon en un solo lugar.</p>
+              <div id="evoluciones"></div> <!-- Aquí se mostrarán las evoluciones -->
+          </div>
+      </div>
+  </section>
+</main>
+
+<script>
+  // Realizar una solicitud a la PokeAPI para obtener información sobre Squirtle
+  fetch('https://pokeapi.co/api/v2/pokemon/squirtle/')
+      .then(response => response.json())
+      .then(data => {
+          const evoluciones = data.species.url;
+          // Obtener información sobre las evoluciones de Squirtle
+          fetch(evoluciones)
+              .then(response => response.json())
+              .then(data => {
+                  const evolucionesArray = data.evolution_chain.url;
+                  // Obtener la cadena de evolución de Squirtle
+                  fetch(evolucionesArray)
+                      .then(response => response.json())
+                      .then(data => {
+                          const cadenaEvolucion = data.chain;
+                          mostrarEvoluciones(cadenaEvolucion);
+                      })
+                      .catch(error => console.error('Error al obtener la cadena de evolución:', error));
+              })
+              .catch(error => console.error('Error al obtener las evoluciones:', error));
+      })
+      .catch(error => console.error('Error al obtener información de Squirtle:', error));
+
+  function mostrarEvoluciones(cadenaEvolucion) {
+      const evolucionesDiv = document.getElementById('evoluciones');
+      // Mostrar las evoluciones en el div correspondiente
+      evolucionesDiv.innerHTML = `<h2>Evoluciones de Squirtle:</h2>`;
+      mostrarPokemon(cadenaEvolucion);
+  }
+
+  function mostrarPokemon(pokemon) {
+      const evolucionesDiv = document.getElementById('evoluciones');
+      evolucionesDiv.innerHTML += `<p><strong>${pokemon.species.name}</strong></p>`;
+      // Mostrar estadísticas del Pokémon
+      fetch(pokemon.species.url)
+          .then(response => response.json())
+          .then(data => {
+              fetch(data.varieties[0].pokemon.url)
+                  .then(response => response.json())
+                  .then(pokemonData => {
+                      evolucionesDiv.innerHTML += `<p><strong>Estadísticas de ${pokemonData.name}:</strong></p>`;
+                      pokemonData.stats.forEach(stat => {
+                          evolucionesDiv.innerHTML += `<p>${stat.stat.name}: ${stat.base_stat}</p>`;
+                      });
+                  })
+                  .catch(error => console.error('Error al obtener estadísticas del Pokémon:', error));
+          })
+          .catch(error => console.error('Error al obtener detalles del Pokémon:', error));
+
+      if (pokemon.evolves_to.length > 0) {
+          pokemon.evolves_to.forEach(evolution => {
+              mostrarPokemon(evolution);
+          });
+      }
+  }
+</script>
+
+
+<%- include('includes/foot.ejs') %>
